@@ -2,7 +2,7 @@ import consultantPortrait from "@/assets/consultant-portrait.jpg";
 
 const About = () => {
   return (
-    <section id="ueber-mich" className="bg-background py-16 lg:py-24">
+    <section id="team" className="bg-muted py-16 lg:py-24">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -10,22 +10,22 @@ const About = () => {
               <img 
                 src={consultantPortrait}
                 alt="Beraterin Portrait" 
-                className="w-80 h-80 rounded-2xl object-cover shadow-lg"
+                className="w-80 h-80 rounded-2xl object-cover"
               />
             </div>
             <div className="space-y-6">
               <h2 className="text-3xl lg:text-4xl font-bold text-primary">
-                Über mich
+                Unser Team
               </h2>
               <h3 className="text-2xl font-bold text-foreground">
-                Sarah Müller
+                Audelia Babbev-Pittet, Bewerbungscoach
               </h3>
               <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
                 <p>
-                  Als erfahrene Karriereberaterin unterstütze ich seit über 8 Jahren junge Menschen dabei, ihren Weg in die Berufswelt zu finden. Mit meiner Expertise in Personalwesen und Coaching helfe ich dabei, Stärken zu entdecken und den passenden Berufseinstieg zu gestalten.
+                  Ich habe mir zum Ziel gesetzt Schülern zu helfen, aus der Masse herauszustechen mit nahbaren Bewerbungen.
                 </p>
                 <p>
-                  Meine Mission ist es, jedem Einzelnen das Selbstvertrauen und die Werkzeuge zu geben, die für eine erfolgreiche Bewerbung und den Start ins Berufsleben notwendig sind.
+                  Ich schreibe Bewerbungen mit Leidenschaft und das widerspiegelt sich im Text. Das möchte ich gerne weitergeben. Mit der heutigen KI‑Tools kann das eine Herausforderung sein, jedoch zeige ich meinen Kunden wie sie es erfolgreich schaffen.
                 </p>
               </div>
             </div>

@@ -8,8 +8,9 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 203 43% 96%;
-    --foreground: 195 100% 15%;
+    /* Deck-compatible palette */
+    --background: 193 53% 93%; /* #DFF1F6 */
+    --foreground: 210 10% 10%; /* near-black */
 
     --card: 0 0% 100%;
     --card-foreground: 195 100% 15%;
@@ -17,16 +18,16 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 195 100% 15%;
 
-    --primary: 195 100% 25%;
-    --primary-foreground: 203 43% 96%;
+    --primary: 205 65% 35%; /* brand blue */
+    --primary-foreground: 0 0% 100%;
 
     --secondary: 180 26% 76%;
     --secondary-foreground: 195 100% 15%;
 
-    --muted: 203 43% 94%;
-    --muted-foreground: 195 15% 45%;
+    --muted: 193 53% 90%;
+    --muted-foreground: 205 10% 35%;
 
-    --accent: 186 65% 65%;
+    --accent: 195 65% 65%; /* badge blue */
     --accent-foreground: 195 100% 15%;
 
     --destructive: 0 84.2% 60.2%;
@@ -34,7 +35,7 @@ All colors MUST be HSL.
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --ring: 205 65% 35%;
 
     --radius: 0.5rem;
 
