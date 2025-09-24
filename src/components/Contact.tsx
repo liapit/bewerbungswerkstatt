@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { Mail, Phone, MapPin } from "lucide-react";
 
 const Contact = () => {
   return (
@@ -16,7 +15,7 @@ const Contact = () => {
             <div className="grid md:grid-cols-2 gap-8 mb-12 text-left">
               <div className="flex items-center gap-4">
                 <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center">
-                  <Mail className="w-8 h-8 text-primary" />
+                  <img src="/images/email.png" alt="E‑Mail Icon" className="w-16 h-16" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground mb-1">E‑Mail</h3>
@@ -25,7 +24,7 @@ const Contact = () => {
               </div>
               <div className="flex items-center gap-4">
                 <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center">
-                  <Phone className="w-8 h-8 text-primary" />
+                  <img src="/images/tel.png" alt="Telefon Icon" className="w-16 h-16" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground mb-1">Telefon</h3>
@@ -34,7 +33,7 @@ const Contact = () => {
               </div>
               <div className="flex items-center gap-4">
                 <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center">
-                  <MapPin className="w-8 h-8 text-primary" />
+                  <img src="/images/marker.png" alt="Standort Icon" className="w-16 h-16" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground mb-1">Standort</h3>

@@ -7,7 +7,7 @@ const Problem = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="flex justify-center lg:justify-start">
             <img
-              src="/images/person_frustrated.png"
+              src="/images/question.png"
               alt="Schüler mit Fragen am Laptop"
               className="w-full max-w-md lg:max-w-lg aspect-square rounded-2xl object-cover"
             />

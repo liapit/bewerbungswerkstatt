@@ -10,11 +10,11 @@ const Hero = () => {
             <ul className="space-y-4 max-w-2xl mx-auto lg:mx-0">
               <li className="flex items-center gap-4">
                 <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-accent text-primary font-bold">✓</span>
-                <span className="text-xl lg:text-2xl text-foreground">Coaching für die Lehrstellensuche</span>
+                <span className="text-xl lg:text-2xl text-foreground">Nahbare Motivationsschreiben statt 08/15-KI-Bewerbungen</span>
               </li>
               <li className="flex items-center gap-4">
                 <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-accent text-primary font-bold">✓</span>
-                <span className="text-xl lg:text-2xl text-foreground">Interessen und Stärken identifizieren</span>
+                <span className="text-xl lg:text-2xl text-foreground">Coaching für die Lehrstellensuche</span>
               </li>
               <li className="flex items-center gap-4">
                 <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-accent text-primary font-bold">✓</span>
@@ -31,8 +31,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      {/* decorative arc motif */}
-      <div className="pointer-events-none absolute -bottom-48 -right-48 h-96 w-96 rounded-[50%] bg-secondary opacity-60 blur-[1px]" />
     </section>
   );
 };
