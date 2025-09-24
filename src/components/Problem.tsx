@@ -7,9 +7,9 @@ const Problem = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="flex justify-center lg:justify-start">
             <img
-              src="/lovable-uploads/9b6744e7-639c-452f-b4b4-abe789aebc58.png"
+              src="/images/person_frustrated.png"
               alt="Schüler mit Fragen am Laptop"
-              className="w-full max-w-md lg:max-w-lg rounded-full"
+              className="w-full max-w-md lg:max-w-lg aspect-square rounded-2xl object-cover"
             />
           </div>
           <div className="space-y-6">

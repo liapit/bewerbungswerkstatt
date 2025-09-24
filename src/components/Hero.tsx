@@ -24,7 +24,7 @@ const Hero = () => {
           </div>
           <div className="flex justify-center lg:justify-end">
             <img
-              src="/lovable-uploads/9b6744e7-639c-452f-b4b4-abe789aebc58.png"
+              src="/images/person_laptop.png"
               alt="Illustration"
               className="w-full max-w-md lg:max-w-lg rounded-2xl"
             />
