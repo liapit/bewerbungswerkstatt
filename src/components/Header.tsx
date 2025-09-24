@@ -7,9 +7,9 @@ const Header = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-3">
             <img 
-              src="/lovable-uploads/91a47700-6bba-4769-8e5d-c52da851bc42.png" 
+              src="/images/logo.png" 
               alt="Bewerbungswerkstatt Logo" 
-              className="h-10 w-auto"
+              className="h-12 w-auto"
             />
           </div>
           <nav className="hidden md:flex space-x-8">
