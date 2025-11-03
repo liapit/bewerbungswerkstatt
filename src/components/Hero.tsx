@@ -14,7 +14,7 @@ const Hero = () => {
               </li>
               <li className="flex items-center gap-4">
                 <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-accent text-primary font-bold">✓</span>
-                <span className="text-xl lg:text-2xl text-foreground">Coaching für die Lehrstellensuche</span>
+                <span className="text-xl lg:text-2xl text-foreground">Coaching für die Lehr-/Stellensuche</span>
               </li>
               <li className="flex items-center gap-4">
                 <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-accent text-primary font-bold">✓</span>
