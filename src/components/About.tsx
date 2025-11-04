@@ -22,10 +22,10 @@ const About = () => {
               </h3>
               <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
                 <p>
-                  Ich habe mir zum Ziel gesetzt Stellensuchenden zu helfen, aus der Masse herauszustechen mit nahbaren Bewerbungen.
+                  Ich habe mir zum Ziel gesetzt Schülern zu helfen, aus der Masse herauszustechen mit nahbaren Bewerbungen.
                 </p>
                 <p>
-                  Ich schreibe Bewerbungen mit Leidenschaft und das widerspiegelt sich im Text. Das möchte ich gerne an Sie weitergeben! Mit den heutigen KI‑Tools kann das eine Herausforderung sein, jedoch zeige ich meinen Kunden wie sie es erfolgreich schaffen.
+                  Ich schreibe Bewerbungen mit Leidenschaft und das widerspiegelt sich im Text. Das möchte ich gerne an sie weitergeben! Mit den heutigen KI‑Tools kann das eine Herausforderung sein, jedoch zeige ich den Schülern wie sie es erfolgreich schaffen.
                 </p>
               </div>
             </div>

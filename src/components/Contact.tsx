@@ -7,7 +7,7 @@ const Contact = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="max-w-2xl">
             <h2 className="text-3xl lg:text-5xl font-bold text-primary mb-8">
-              Lassen Sie uns gemeinsam ihre Chance herauszustechen stärken.
+              Lassen Sie uns gemeinsam die Chance Ihrer Schüler herauszustechen stärken.
             </h2>
             <p className="text-xl text-muted-foreground mb-12">
               Kontaktieren Sie mich ganz unverbindlich:
@@ -41,7 +41,7 @@ const Contact = () => {
                 </div>
               </div>
             </div>
-            <Button size="lg" className="px-8 py-4 text-lg">Termin vorschlagen</Button>
+            <Button size="lg" className="px-8 py-4 text-lg">Kontaktieren Sie mich</Button>
           </div>
           <div className="flex justify-center lg:justify-end">
             <img
