@@ -10,7 +10,7 @@ const About = () => {
               <img 
                 src={consultantPortrait}
                 alt="Beraterin Portrait" 
-                className="w-80 h-80 rounded-2xl object-cover"
+                className="w-80 h-80 rounded-2xl object-cover object-[50%_20%]"
               />
             </div>
             <div className="space-y-6">
