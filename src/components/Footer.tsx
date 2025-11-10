@@ -8,8 +8,8 @@ const Footer = () => {
             <p className="text-muted-foreground">Einsiedeln</p>
           </div>
           <div>
-            <a href="mailto:audelia@babbev.com" className="text-primary hover:underline">
-              audelia@babbev.com
+            <a href="mailto:audelia@bewerbungswerkstatt.ch" className="text-primary hover:underline">
+              audelia@bewerbungswerkstatt.ch
             </a>
           </div>
         </div>

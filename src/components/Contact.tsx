@@ -19,7 +19,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground mb-1">E‑Mail</h3>
-                  <p className="text-foreground">audelia@babbev.com</p>
+                  <p className="text-foreground">audelia@bewerbungswerkstatt.ch</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
@@ -41,7 +41,9 @@ const Contact = () => {
                 </div>
               </div>
             </div>
-            <Button size="lg" className="px-8 py-4 text-lg">Kontaktieren Sie mich</Button>
+            <Button size="lg" className="px-8 py-4 text-lg" asChild>
+              <a href="mailto:audelia@bewerbungswerkstatt.ch">Kontaktieren Sie mich</a>
+            </Button>
           </div>
           <div className="flex justify-center lg:justify-end">
             <img
