@@ -12,7 +12,7 @@ const Contact = () => {
             <p className="text-xl text-muted-foreground mb-12">
               Kontaktieren Sie mich ganz unverbindlich:
             </p>
-            <div className="grid md:grid-cols-2 gap-8 mb-12 text-left">
+            <div className="grid grid-cols-1 gap-8 mb-12 text-left">
               <div className="flex items-center gap-4">
                 <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center">
                   <img src="/images/email.png" alt="E‑Mail Icon" className="w-16 h-16" />
