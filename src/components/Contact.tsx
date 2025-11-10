@@ -12,14 +12,14 @@ const Contact = () => {
             <p className="text-xl text-muted-foreground mb-12">
               Kontaktieren Sie mich ganz unverbindlich:
             </p>
-            <div className="grid md:grid-cols-2 gap-8 mb-12 text-left">
+            <div className="grid grid-cols-1 gap-8 mb-12 text-left">
               <div className="flex items-center gap-4">
                 <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center">
                   <img src="/images/email.png" alt="E‑Mail Icon" className="w-16 h-16" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground mb-1">E‑Mail</h3>
-                  <p className="text-foreground">audelia@babbev.com</p>
+                  <p className="text-foreground">audelia@bewerbungswerkstatt.ch</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
@@ -41,7 +41,9 @@ const Contact = () => {
                 </div>
               </div>
             </div>
-            <Button size="lg" className="px-8 py-4 text-lg">Kontaktieren Sie mich</Button>
+            <Button size="lg" className="px-8 py-4 text-lg" asChild>
+              <a href="mailto:audelia@bewerbungswerkstatt.ch">Kontaktieren Sie mich</a>
+            </Button>
           </div>
           <div className="flex justify-center lg:justify-end">
             <img

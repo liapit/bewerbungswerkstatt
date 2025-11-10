@@ -58,8 +58,8 @@ const Header = () => {
               Kontakt
             </a>
           </nav>
-          <Button className="hidden md:flex">
-            Kontakt aufnehmen
+          <Button className="hidden md:flex" asChild>
+            <a href="mailto:audelia@bewerbungswerkstatt.ch">Kontakt aufnehmen</a>
           </Button>
           <div className="md:hidden">
             <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
@@ -130,11 +130,8 @@ const Header = () => {
                     Kontakt
                   </a>
                 </nav>
-                <Button
-                  className="w-full"
-                  onClick={() => handleNavigate("kontakt")}
-                >
-                  Kontakt aufnehmen
+                <Button className="w-full" asChild>
+                  <a href="mailto:audelia@bewerbungswerkstatt.ch">Kontakt aufnehmen</a>
                 </Button>
               </SheetContent>
             </Sheet>

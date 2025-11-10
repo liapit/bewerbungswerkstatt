@@ -1,5 +1,3 @@
-import { Circle } from "lucide-react";
-
 const Problem = () => {
   return (
     <section id="problem" className="bg-muted py-16 lg:py-24">
@@ -15,16 +13,16 @@ const Problem = () => {
           <div className="space-y-6">
             <h2 className="text-3xl lg:text-5xl font-bold text-primary">Problem</h2>
             <ul className="space-y-6 text-xl lg:text-2xl">
-              <li className="flex items-start gap-4">
-                <Circle className="mt-2 h-4 w-4 fill-foreground text-foreground" />
+              <li className="flex items-center gap-4">
+                <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-accent text-primary font-bold">?</span>
                 <span>Schüler schreiben Bewerbungen mit KI.</span>
               </li>
-              <li className="flex items-start gap-4">
-                <Circle className="mt-2 h-4 w-4 fill-foreground text-foreground" />
+              <li className="flex items-center gap-4">
+                <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-accent text-primary font-bold">?</span>
                 <span>Jeder Schüler kann dadurch gleichgute Bewerbungen schreiben.</span>
               </li>
-              <li className="flex items-start gap-4">
-                <Circle className="mt-2 h-4 w-4 fill-foreground text-foreground" />
+              <li className="flex items-center gap-4">
+                <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-accent text-primary font-bold">?</span>
                 <span>Wie soll eine Person da herausstechen können?</span>
               </li>
             </ul>
