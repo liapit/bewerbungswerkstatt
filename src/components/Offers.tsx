@@ -17,12 +17,12 @@ const Offers = () => {
               <Users className="w-8 h-8 text-primary" />
             </div>
             <h3 className="text-2xl font-bold text-center text-primary mb-8">
-              Einzelne Lektion
+              1 Doppellektion
             </h3>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
                 <FileText className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
-                <span className="text-foreground">Was gehört in ein Motivationsschreiben, was nicht?</span>
+                <span className="text-foreground">Was gehört in ein Motivationsschreiben und einen CV, was nicht?</span>
               </div>
               <div className="flex items-start gap-3">
                 <Search className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
@@ -34,15 +34,11 @@ const Offers = () => {
               </div>
               <div className="flex items-start gap-3">
                 <Search className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
-                <span className="text-foreground">Professionell online Auftreten.</span>
+                <span className="text-foreground">Allgemeine Tipps zum Bewerbungsprozess</span>
               </div>
               <div className="flex items-start gap-3">
                 <MessageSquare className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
-                <span className="text-foreground">Häufigsten Fragen beim Bewerbungsgespräch diskutieren.</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <MessageSquare className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
-                <span className="text-foreground">Wie beim Bewerbungsgespräch auftreten?.</span>
+                <span className="text-foreground">Feedback Motivationsschreiben und CV für jeder Schüler und jede Schülerin</span>
               </div>
             </div>
           </div>
@@ -53,7 +49,7 @@ const Offers = () => {
               <User className="w-8 h-8 text-primary" />
             </div>
             <h3 className="text-2xl font-bold text-center text-primary mb-8">
-              Mehrere Lektionen
+              Mehrere Doppellektionen
             </h3>
             <div className="space-y-4">
               
@@ -63,55 +59,39 @@ const Offers = () => {
               </div>
               <div className="flex items-start gap-3">
                 <Search className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
+                <span className="text-foreground">Wie sieht ein vollständiges Bewerbungsdossier aus?</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
+                <span className="text-foreground">Unterstützung, Feedback & Korrektur Motivationsschreiben und CV</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <Search className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
                 <span className="text-foreground">Wie Untersuche ich eine Stellenbeschreibeung und die Firma?</span>
               </div>
               <div className="flex items-start gap-3">
                 <FileText className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
-                <span className="text-foreground">Individuelles Stärken- und Interessenprofil kreieren und diskutieren.</span>
+                <span className="text-foreground">Individuelles Stärken- und Interessenprofil kreieren und diskutieren</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <MessageSquare className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
+                <span className="text-foreground">Wie beim Schnuppern und Bewerbungsgespräch auftreten?</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <MessageSquare className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
+                <span className="text-foreground">Häufigsten Fragen beim Bewerbungsgespräch diskutieren und vorbereiten</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <MessageSquare className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
+                <span className="text-foreground">Wie beim Bewerbungsgespräch auftreten?</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <MessageSquare className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
+                <span className="text-foreground">Bewerbungsgespräche trainieren</span>
               </div>
               <div className="flex items-start gap-3">
                 <Search className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
-                <span className="text-foreground">Wie sieht ein vollständiges Bewerbungsdossier aus?</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <Search className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
-                <span className="text-foreground">Professionell online Auftreten.</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <MessageSquare className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
-                <span className="text-foreground">Häufigsten Fragen beim Bewerbungsgespräch diskutieren und vorbereiten.</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <MessageSquare className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
-                <span className="text-foreground">Wie beim Bewerbungsgespräch auftreten? Individuell auf die Stelle der Schüler.</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <FileText className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
-                <span className="text-foreground">Wie Untersuche ich eine Stellenbeschreibung und die Firma?</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <Search className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
-                <span className="text-foreground">Was gehört zu einem Bewerbungsdossier? (Theorie)</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <Search className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
-                <span className="text-foreground">Professionell online Auftreten. (Theorie)</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <MessageSquare className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
-                <span className="text-foreground">Häufigsten Fragen beim Bewerbungsgespräch diskutieren und vorbereiten.</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <MessageSquare className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
-                <span className="text-foreground">Wie beim Bewerbungsgespräch auftreten? Individuell auf die Stellen der Schüler angepasst.</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
-                <span className="text-foreground">Schreiben, Feedback & Korrektur Motivationsschreiben und CV</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <MessageSquare className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
-                <span className="text-foreground">Bewerbungsgespräche realitätsnah trainieren</span>
+                <span className="text-foreground">Professionell online Auftreten</span>
               </div>
             </div>
           </div>
