@@ -29,7 +29,7 @@ const Offers = () => {
           {/* Gruppenlektionen */}
           <div className="bg-card rounded-2xl p-8 shadow-sm">
             <div className="flex items-center justify-center w-16 h-16 bg-accent rounded-full mb-6 mx-auto">
-              <Users className="w-8 h-8 text-primary" />
+              <User className="w-8 h-8 text-primary" />
             </div>
             <h3 className="text-2xl font-bold text-center text-primary mb-8">
               1 Doppellektion
@@ -61,7 +61,7 @@ const Offers = () => {
           {/* Individueller Fokus */}
           <div className="bg-card rounded-2xl p-8 shadow-sm">
             <div className="flex items-center justify-center w-16 h-16 bg-accent rounded-full mb-6 mx-auto">
-              <User className="w-8 h-8 text-primary" />
+              <Users className="w-8 h-8 text-primary" />
             </div>
             <h3 className="text-2xl font-bold text-center text-primary mb-8">
               Mehrere Doppellektionen

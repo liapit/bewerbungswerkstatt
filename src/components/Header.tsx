@@ -49,7 +49,7 @@ const Header = () => {
               className="h-12 w-auto"
             />
           </div>
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden min-[900px]:flex space-x-8">
             <a href="#angebote" className="text-foreground hover:text-primary transition-colors">Wie ich helfe</a>
             <a href="#problem" className="text-foreground hover:text-primary transition-colors">Problem</a>
             <a href="#benefits" className="text-foreground hover:text-primary transition-colors">Nutzen</a>
@@ -58,10 +58,10 @@ const Header = () => {
               Kontakt
             </a>
           </nav>
-          <Button className="hidden md:flex" asChild>
+          <Button className="hidden min-[900px]:flex" asChild>
             <a href="mailto:audelia@bewerbungswerkstatt.ch">Kontakt aufnehmen</a>
           </Button>
-          <div className="md:hidden">
+          <div className="min-[900px]:hidden">
             <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
               <SheetTrigger asChild>
                 <Button
