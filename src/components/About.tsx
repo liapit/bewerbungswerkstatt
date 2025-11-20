@@ -18,7 +18,7 @@ const About = () => {
                 Über mich
               </h2>
               <h3 className="text-2xl font-bold text-foreground">
-                Audelia Babbev-Pittet, Bewerbungscoach
+                Audelia Babbev-Pittet, Bewerbungsspezialistin
               </h3>
               <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
                 <p>
