@@ -1,4 +1,19 @@
-import { Users, User, FileText, Search, MessageSquare, Target, CheckCircle } from "lucide-react";
+import {
+  Users,
+  User,
+  FilePenLine,
+  FolderCheck,
+  Search,
+  Lightbulb,
+  ClipboardCheck,
+  MessageSquare,
+  Target,
+  UserCheck,
+  HelpCircle,
+  Mic,
+  Dumbbell,
+  Globe,
+} from "lucide-react";
 
 const Offers = () => {
   return (
@@ -9,7 +24,7 @@ const Offers = () => {
             Wie ich helfe
           </h2>
         </div>
-        
+
         <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {/* Gruppenlektionen */}
           <div className="bg-card rounded-2xl p-8 shadow-sm">
@@ -21,23 +36,23 @@ const Offers = () => {
             </h3>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
+                <FilePenLine className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
                 <span className="text-foreground">Was gehört in ein Motivationsschreiben und einen CV, was nicht?</span>
               </div>
               <div className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
+                <Search className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
                 <span className="text-foreground">Wie Untersuche ich eine Stellenbeschreibeung und die Firma?</span>
               </div>
               <div className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
+                <FolderCheck className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
                 <span className="text-foreground">Wie sieht ein vollständiges Bewerbungsdossier aus?</span>
               </div>
               <div className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
+                <Lightbulb className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
                 <span className="text-foreground">Allgemeine Tipps zum Bewerbungsprozess</span>
               </div>
               <div className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
+                <ClipboardCheck className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
                 <span className="text-foreground">Feedback Motivationsschreiben und CV für jeder Schüler und jede Schülerin</span>
               </div>
             </div>
@@ -52,45 +67,44 @@ const Offers = () => {
               Mehrere Doppellektionen
             </h3>
             <div className="space-y-4">
-              
-            <div className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
+              <div className="flex items-start gap-3">
+                <FilePenLine className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
                 <span className="text-foreground">Was gehört in ein Motivationsschreiben, was nicht?</span>
               </div>
               <div className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
+                <FolderCheck className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
                 <span className="text-foreground">Wie sieht ein vollständiges Bewerbungsdossier aus?</span>
               </div>
               <div className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
+                <MessageSquare className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
                 <span className="text-foreground">Unterstützung, Feedback & Korrektur Motivationsschreiben und CV</span>
               </div>
               <div className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
+                <Search className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
                 <span className="text-foreground">Wie Untersuche ich eine Stellenbeschreibeung und die Firma?</span>
               </div>
               <div className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
+                <Target className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
                 <span className="text-foreground">Individuelles Stärken- und Interessenprofil kreieren und diskutieren</span>
               </div>
               <div className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
+                <UserCheck className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
                 <span className="text-foreground">Wie beim Schnuppern und Bewerbungsgespräch auftreten?</span>
               </div>
               <div className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
+                <HelpCircle className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
                 <span className="text-foreground">Häufigsten Fragen beim Bewerbungsgespräch diskutieren und vorbereiten</span>
               </div>
               <div className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
+                <Mic className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
                 <span className="text-foreground">Wie beim Bewerbungsgespräch auftreten?</span>
               </div>
               <div className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
+                <Dumbbell className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
                 <span className="text-foreground">Bewerbungsgespräche trainieren</span>
               </div>
               <div className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
+                <Globe className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
                 <span className="text-foreground">Professionell online Auftreten</span>
               </div>
             </div>
