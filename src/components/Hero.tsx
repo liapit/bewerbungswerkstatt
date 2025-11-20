@@ -5,19 +5,19 @@ const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
             <h1 className="text-4xl lg:text-6xl font-bold text-primary leading-tight text-center lg:text-left">
-              Ich mache Schüler fit für die Zukunft
+              Ich mache Schüler fit für die Lehrstellensuche
             </h1>
             <ul className="space-y-4 max-w-2xl mx-auto lg:mx-0">
               <li className="flex items-center gap-4">
-                <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-accent text-primary font-bold">✓</span>
-                <span className="text-xl lg:text-2xl text-foreground">Nahbare Motivationsschreiben statt 08/15-KI-Bewerbungen</span>
+                <span className="inline-flex h-12 w-12 aspect-square flex-shrink-0 items-center justify-center rounded-full bg-accent text-primary font-bold">✓</span>
+                <span className="text-xl lg:text-2xl text-foreground">Packende Motivationsschreiben statt 08/15-KI-Bewerbungen</span>
               </li>
               <li className="flex items-center gap-4">
-                <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-accent text-primary font-bold">✓</span>
-                <span className="text-xl lg:text-2xl text-foreground">Coaching für die Lehrstellensuche</span>
+                <span className="inline-flex h-12 w-12 aspect-square flex-shrink-0 items-center justify-center rounded-full bg-accent text-primary font-bold">✓</span>
+                <span className="text-xl lg:text-2xl text-foreground">Coaching für die Bewerbungsphase</span>
               </li>
               <li className="flex items-center gap-4">
-                <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-accent text-primary font-bold">✓</span>
+                <span className="inline-flex h-12 w-12 aspect-square flex-shrink-0 items-center justify-center rounded-full bg-accent text-primary font-bold">✓</span>
                 <span className="text-xl lg:text-2xl text-foreground">Fit sein für den Bewerbungsprozess</span>
               </li>
             </ul>

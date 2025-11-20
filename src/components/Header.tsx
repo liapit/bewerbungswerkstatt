@@ -50,9 +50,9 @@ const Header = () => {
             />
           </div>
           <nav className="hidden min-[900px]:flex space-x-8">
-            <a href="#angebote" className="text-foreground hover:text-primary transition-colors">Wie ich helfe</a>
             <a href="#problem" className="text-foreground hover:text-primary transition-colors">Problem</a>
             <a href="#benefits" className="text-foreground hover:text-primary transition-colors">Nutzen</a>
+            <a href="#angebote" className="text-foreground hover:text-primary transition-colors">Wie ich helfe</a>
             <a href="#team" className="text-foreground hover:text-primary transition-colors">Über mich</a>
             <a href="#kontakt" className="text-foreground hover:text-primary transition-colors">
               Kontakt
@@ -80,16 +80,6 @@ const Header = () => {
               >
                 <nav className="flex flex-col space-y-4">
                   <a
-                    href="#angebote"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleNavigate("angebote");
-                    }}
-                    className="text-foreground hover:text-primary transition-colors"
-                  >
-                    Wie ich helfe
-                  </a>
-                  <a
                     href="#problem"
                     onClick={(e) => {
                       e.preventDefault();
@@ -108,6 +98,16 @@ const Header = () => {
                     className="text-foreground hover:text-primary transition-colors"
                   >
                     Nutzen
+                  </a>
+                  <a
+                    href="#angebote"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNavigate("angebote");
+                    }}
+                    className="text-foreground hover:text-primary transition-colors"
+                  >
+                    Wie ich helfe
                   </a>
                   <a
                     href="#team"
