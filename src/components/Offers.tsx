@@ -41,11 +41,11 @@ const Offers = () => {
               </div>
               <div className="flex items-start gap-3">
                 <Search className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
-                <span className="text-foreground">Wie Untersuche ich eine Stellenbeschreibeung und die Firma?</span>
+                <span className="text-foreground">Wie schreibe ich ein Motivationsschreiben, sodass es nicht wie alle anderen aussieht?</span>
               </div>
               <div className="flex items-start gap-3">
                 <FolderCheck className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
-                <span className="text-foreground">Wie sieht ein vollständiges Bewerbungsdossier aus?</span>
+                <span className="text-foreground">Wie muss der Lebenslauf angepasst werden?</span>
               </div>
               <div className="flex items-start gap-3">
                 <Lightbulb className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
@@ -69,7 +69,7 @@ const Offers = () => {
             <div className="space-y-4">
               <div className="flex items-start gap-3">
                 <FilePenLine className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
-                <span className="text-foreground">Was gehört in ein Motivationsschreiben, was nicht?</span>
+                <span className="text-foreground">Was gehört in ein Motivationsschreiben und einen Lebenslauf, was nicht?</span>
               </div>
               <div className="flex items-start gap-3">
                 <FolderCheck className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
@@ -77,15 +77,11 @@ const Offers = () => {
               </div>
               <div className="flex items-start gap-3">
                 <MessageSquare className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
-                <span className="text-foreground">Unterstützung, Feedback & Korrektur Motivationsschreiben und CV</span>
+                <span className="text-foreground">Unterstützung, Feedback & Korrektur Motivationsschreiben und Lebenslauf</span>
               </div>
               <div className="flex items-start gap-3">
                 <Search className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
                 <span className="text-foreground">Wie Untersuche ich eine Stellenbeschreibeung und die Firma?</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <Target className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
-                <span className="text-foreground">Individuelles Stärken- und Interessenprofil kreieren und diskutieren</span>
               </div>
               <div className="flex items-start gap-3">
                 <UserCheck className="w-5 h-5 text-accent mt-1 flex-shrink-0" />

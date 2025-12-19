@@ -15,15 +15,15 @@ const Problem = () => {
             <ul className="space-y-6 text-xl lg:text-2xl">
               <li className="flex items-center gap-4">
                 <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-accent text-primary font-bold">?</span>
-                <span>Schüler schreiben Bewerbungen mit KI.</span>
+                <span>Ganz viele Schüler arbeiten nach Vorlage und schreiben mit KI.</span>
               </li>
               <li className="flex items-center gap-4">
                 <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-accent text-primary font-bold">?</span>
-                <span>Jeder Schüler kann dadurch gleichgute Bewerbungen schreiben.</span>
+                <span>Das resultiert in vielen gleichartigen Bewerbungsschreiben.</span>
               </li>
               <li className="flex items-center gap-4">
                 <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-accent text-primary font-bold">?</span>
-                <span>Wie soll eine Person da herausstechen können?</span>
+                <span>Wie soll ein Schüler da herausstechen können?</span>
               </li>
             </ul>
           </div>

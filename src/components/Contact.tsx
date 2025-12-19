@@ -7,7 +7,7 @@ const Contact = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="max-w-2xl">
             <h2 className="text-3xl lg:text-5xl font-bold text-primary mb-8">
-              Lassen Sie uns gemeinsam Ihre Schüler beim herausstechen helfen!
+              Lassen Sie uns gemeinsam Ihre Schüler bei der Lehrstellensuche unterstützen!
             </h2>
             <p className="text-xl text-muted-foreground mb-12">
               Kontaktieren Sie mich ganz unverbindlich:

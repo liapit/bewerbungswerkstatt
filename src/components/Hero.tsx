@@ -10,11 +10,11 @@ const Hero = () => {
             <ul className="space-y-4 max-w-2xl mx-auto lg:mx-0">
               <li className="flex items-center gap-4">
                 <span className="inline-flex h-12 w-12 aspect-square flex-shrink-0 items-center justify-center rounded-full bg-accent text-primary font-bold">✓</span>
-                <span className="text-xl lg:text-2xl text-foreground">Packende Motivationsschreiben statt 08/15-KI-Bewerbungen</span>
+                <span className="text-xl lg:text-2xl text-foreground">Bewerbungen, die Herausstechen und packend sind</span>
               </li>
               <li className="flex items-center gap-4">
                 <span className="inline-flex h-12 w-12 aspect-square flex-shrink-0 items-center justify-center rounded-full bg-accent text-primary font-bold">✓</span>
-                <span className="text-xl lg:text-2xl text-foreground">Coaching für die Bewerbungsphase</span>
+                <span className="text-xl lg:text-2xl text-foreground">Tipps für das Motivationsschreiben und den Lebenslauf</span>
               </li>
               <li className="flex items-center gap-4">
                 <span className="inline-flex h-12 w-12 aspect-square flex-shrink-0 items-center justify-center rounded-full bg-accent text-primary font-bold">✓</span>
