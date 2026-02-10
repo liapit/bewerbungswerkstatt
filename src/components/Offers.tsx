@@ -81,7 +81,7 @@ const Offers = () => {
               </div>
               <div className="flex items-start gap-3">
                 <Search className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
-                <span className="text-foreground">Wie Untersuche ich eine Stellenbeschreibeung und die Firma?</span>
+                <span className="text-foreground">Wie Untersuche ich eine Stellenbeschreibung und die Firma?</span>
               </div>
               <div className="flex items-start gap-3">
                 <UserCheck className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
