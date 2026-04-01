@@ -15,18 +15,11 @@ const navItems = [
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [pendingTarget, setPendingTarget] = useState<string | null>(null);
-  const [scrolled, setScrolled] = useState(false);
 
   const handleNavigate = (targetId: string) => {
     setPendingTarget(targetId);
     setMobileOpen(false);
   };
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 10);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   useEffect(() => {
     if (!mobileOpen && pendingTarget) {
@@ -52,26 +45,20 @@ const Header = () => {
   }, [mobileOpen, pendingTarget]);
 
   return (
-    <header
-      className={`sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b transition-shadow ${
-        scrolled ? "shadow-md" : "shadow-none"
-      }`}
-    >
+    <header className="relative z-10">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-3">
-            <img
-              src="/images/logo.png"
-              alt="Bewerbungswerkstatt Logo"
-              className="h-10 w-auto"
-            />
-          </div>
+          <img
+            src="/images/logo.png"
+            alt="Bewerbungswerkstatt Logo"
+            className="h-10 w-auto"
+          />
           <nav className="hidden min-[900px]:flex space-x-8">
             {navItems.map((item) => (
               <a
                 key={item.id}
                 href={`#${item.id}`}
-                className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors"
+                className="text-sm font-medium text-hero-foreground/70 hover:text-hero-foreground transition-colors"
               >
                 {item.label}
               </a>
@@ -87,8 +74,9 @@ const Header = () => {
             <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
               <SheetTrigger asChild>
                 <Button
-                  variant="outline"
+                  variant="ghost"
                   size="icon"
+                  className="text-hero-foreground hover:bg-hero-foreground/10"
                   aria-label="Menü öffnen"
                 >
                   <Menu className="h-5 w-5" />

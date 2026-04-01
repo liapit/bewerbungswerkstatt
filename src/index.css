@@ -4,41 +4,66 @@
 
 @layer base {
   :root {
+    /* ═══════════════════════════════════════════════════════════
+       MAIN SITE COLOR THEME
+       All colors use HSL format: <hue> <saturation%> <lightness%>
+
+       To adjust the theme:
+       - Hue:        0=red, 30=orange, 60=yellow, 120=green, 195=cyan, 210=blue, 270=purple, 330=pink
+       - Saturation:  0%=gray ... 100%=vivid
+       - Lightness:   0%=black, 50%=pure color, 100%=white
+
+       The accent color is used for: CTA buttons, highlighted text,
+       decorative borders, step indicators, icons, and badges.
+       Keep lightness ≤50% for WCAG AA contrast on white backgrounds.
+       ═══════════════════════════════════════════════════════════ */
+
+    /* --- Base backgrounds & text --- */
     --background: 0 0% 100%;
     --foreground: 220 15% 15%;
 
+    /* --- Cards & popovers --- */
     --card: 0 0% 100%;
     --card-foreground: 220 15% 15%;
-
     --popover: 0 0% 100%;
     --popover-foreground: 220 15% 15%;
 
+    /* --- Primary: headings, footer bg, nav links --- */
     --primary: 220 40% 20%;
     --primary-foreground: 0 0% 98%;
 
+    /* --- Secondary & muted: alternating section backgrounds --- */
     --secondary: 220 10% 94%;
     --secondary-foreground: 220 15% 15%;
-
     --muted: 220 10% 96%;
     --muted-foreground: 220 10% 40%;
 
-    --accent: 38 92% 50%;
-    --accent-foreground: 220 40% 15%;
+    /* --- Accent: CTAs, highlights, badges, icons ---
+         ★ CHANGE THIS to re-theme the site ★
+         Current: blue (205°). Previous: orange (38 92% 50%)
+         Schulen page reference: cyan-blue (195 65% 65%)         --- */
+    --accent: 205 65% 45%;
+    --accent-foreground: 0 0% 100%;
 
+    /* --- Destructive (errors) --- */
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
+    /* --- Borders & inputs --- */
     --border: 220 13% 91%;
     --input: 220 13% 91%;
     --ring: 220 40% 20%;
-
     --radius: 0.5rem;
 
+    /* --- Dark hero sections (Hero & Contact) --- */
     --hero-bg: 220 40% 12%;
     --hero-fg: 0 0% 95%;
+
+    /* --- Dark content sections (Benefits) --- */
     --section-dark: 220 25% 15%;
     --section-dark-fg: 220 10% 85%;
 
+    /* --- Sidebar (unused on public site) --- */
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
