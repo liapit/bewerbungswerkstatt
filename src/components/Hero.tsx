@@ -130,7 +130,7 @@ const Hero = () => {
       <div className="pt-28 pb-6 text-center">
         <div className="container mx-auto px-6 max-w-4xl">
           <span className="hero-animate inline-block text-sm font-medium tracking-widest uppercase text-accent mb-6" style={{ animationDelay: "0.1s" }}>
-            Für Professionals in Tech, Banking & Back Office
+            Für Professionals in Tech, Finance & Back Office
           </span>
 
           <h1 className="hero-animate text-4xl md:text-5xl lg:text-7xl font-extrabold leading-[1.1] mb-6" style={{ animationDelay: "0.2s" }}>
