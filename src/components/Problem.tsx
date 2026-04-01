@@ -1,38 +1,62 @@
 const Problem = () => {
+  const stats = [
+    {
+      number: "300+",
+      label: "Bewerbungen pro Stelle",
+      subtext: "Der Wettbewerb war noch nie so gross.",
+    },
+    {
+      number: "85%",
+      label: "identische KI-Lebensläufe",
+      subtext: "ChatGPT, gleiche Prompts, gleiche Resultate.",
+    },
+    {
+      number: "8 Sek.",
+      label: "für den ersten Eindruck",
+      subtext: "So lange schaut ein Recruiter Ihren CV an.",
+    },
+  ];
+
   return (
-    <section id="problem" className="bg-muted py-16 lg:py-24">
+    <section id="herausforderung" className="bg-muted py-20 lg:py-28">
       <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="flex justify-center lg:justify-start">
-            <img
-              src="/images/question.png"
-              alt="Schüler mit Fragen am Laptop"
-              className="w-full max-w-md lg:max-w-lg aspect-square rounded-2xl object-cover"
-            />
-          </div>
-          <div className="space-y-6">
-            <h2 className="text-3xl lg:text-5xl font-bold text-primary">Problem</h2>
-            <ul className="space-y-6 text-xl lg:text-2xl">
-              <li className="flex items-center gap-4">
-                <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-accent text-primary font-bold">?</span>
-                <span>Ganz viele Schüler arbeiten nach Vorlage und schreiben mit KI.</span>
-              </li>
-              <li className="flex items-center gap-4">
-                <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-accent text-primary font-bold">?</span>
-                <span>Das resultiert in vielen gleichartigen Bewerbungsschreiben.</span>
-              </li>
-              <li className="flex items-center gap-4">
-                <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-accent text-primary font-bold">?</span>
-                <span>Wie soll ein Schüler da herausstechen können?</span>
-              </li>
-            </ul>
-          </div>
+        <div className="text-center mb-16">
+          <h2 className="text-3xl lg:text-5xl font-bold text-primary mb-4">
+            Die Realität des Schweizer Arbeitsmarkts
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Kennen Sie das? Hunderte Bewerbungen verschickt, nur generische Absagen erhalten.
+          </p>
         </div>
+
+        <div className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto mb-16">
+          {stats.map((stat) => (
+            <div
+              key={stat.label}
+              className="bg-card rounded-xl p-8 border-l-4 border-accent shadow-sm"
+            >
+              <p className="text-5xl lg:text-7xl font-extrabold text-primary mb-2">
+                {stat.number}
+              </p>
+              <p className="text-lg font-semibold text-foreground mb-1">
+                {stat.label}
+              </p>
+              <p className="text-muted-foreground">
+                {stat.subtext}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <p className="max-w-3xl mx-auto text-center text-lg text-muted-foreground leading-relaxed">
+          Der Schweizer Arbeitsmarkt erlebt den stärksten Wettbewerb seit über
+          10 Jahren. Alle benutzen dieselben KI-Tools, um dieselben generischen
+          Lebensläufe und Motivationsschreiben zu erstellen. Ihr CV sieht aus wie
+          jeder andere — und landet auf demselben Stapel.
+        </p>
       </div>
     </section>
   );
 };
 
 export default Problem;
-
-

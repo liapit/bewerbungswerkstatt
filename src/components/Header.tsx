@@ -1,11 +1,21 @@
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import { useEffect, useState } from "react";
+
+const navItems = [
+  { label: "Herausforderung", id: "herausforderung" },
+  { label: "Lösung", id: "loesung" },
+  { label: "Angebot", id: "angebot" },
+  { label: "Preise", id: "preise" },
+  { label: "Expertin", id: "expertin" },
+  { label: "Kontakt", id: "kontakt" },
+];
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [pendingTarget, setPendingTarget] = useState<string | null>(null);
+  const [scrolled, setScrolled] = useState(false);
 
   const handleNavigate = (targetId: string) => {
     setPendingTarget(targetId);
@@ -13,17 +23,21 @@ const Header = () => {
   };
 
   useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
     if (!mobileOpen && pendingTarget) {
       const idToScroll = pendingTarget;
       setPendingTarget(null);
-      // Defer to next frames to ensure dialog unmount + overflow restore
       const raf1 = requestAnimationFrame(() => {
         const raf2 = requestAnimationFrame(() => {
           const el = document.getElementById(idToScroll);
           if (el) {
             el.scrollIntoView({ behavior: "smooth", block: "start" });
           } else {
-            // Fallback: update hash so native jump can occur
             try {
               window.location.hash = `#${idToScroll}`;
             } catch {
@@ -31,7 +45,6 @@ const Header = () => {
             }
           }
         });
-        // Cleanup second rAF if unmounted early
         return () => cancelAnimationFrame(raf2);
       });
       return () => cancelAnimationFrame(raf1);
@@ -39,27 +52,36 @@ const Header = () => {
   }, [mobileOpen, pendingTarget]);
 
   return (
-    <header className="bg-card shadow-sm border-b">
+    <header
+      className={`sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b transition-shadow ${
+        scrolled ? "shadow-md" : "shadow-none"
+      }`}
+    >
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <img 
-              src="/images/logo.png" 
-              alt="Bewerbungswerkstatt Logo" 
-              className="h-12 w-auto"
+            <img
+              src="/images/logo.png"
+              alt="Bewerbungswerkstatt Logo"
+              className="h-10 w-auto"
             />
           </div>
           <nav className="hidden min-[900px]:flex space-x-8">
-            <a href="#problem" className="text-foreground hover:text-primary transition-colors">Problem</a>
-            <a href="#benefits" className="text-foreground hover:text-primary transition-colors">Nutzen</a>
-            <a href="#angebote" className="text-foreground hover:text-primary transition-colors">Wie ich helfe</a>
-            <a href="#team" className="text-foreground hover:text-primary transition-colors">Über mich</a>
-            <a href="#kontakt" className="text-foreground hover:text-primary transition-colors">
-              Kontakt
-            </a>
+            {navItems.map((item) => (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors"
+              >
+                {item.label}
+              </a>
+            ))}
           </nav>
-          <Button className="hidden min-[900px]:flex" asChild>
-            <a href="mailto:audelia@bewerbungswerkstatt.ch">Kontakt aufnehmen</a>
+          <Button
+            className="hidden min-[900px]:flex bg-accent text-accent-foreground hover:bg-accent/90"
+            asChild
+          >
+            <a href="mailto:audelia@bewerbungswerkstatt.ch">Erstgespräch buchen</a>
           </Button>
           <div className="min-[900px]:hidden">
             <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
@@ -78,60 +100,26 @@ const Header = () => {
                 onOpenAutoFocus={(e) => e.preventDefault()}
                 onCloseAutoFocus={(e) => e.preventDefault()}
               >
-                <nav className="flex flex-col space-y-4">
-                  <a
-                    href="#problem"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleNavigate("problem");
-                    }}
-                    className="text-foreground hover:text-primary transition-colors"
-                  >
-                    Problem
-                  </a>
-                  <a
-                    href="#benefits"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleNavigate("benefits");
-                    }}
-                    className="text-foreground hover:text-primary transition-colors"
-                  >
-                    Nutzen
-                  </a>
-                  <a
-                    href="#angebote"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleNavigate("angebote");
-                    }}
-                    className="text-foreground hover:text-primary transition-colors"
-                  >
-                    Wie ich helfe
-                  </a>
-                  <a
-                    href="#team"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleNavigate("team");
-                    }}
-                    className="text-foreground hover:text-primary transition-colors"
-                  >
-                    Über mich
-                  </a>
-                  <a
-                    href="#kontakt"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleNavigate("kontakt");
-                    }}
-                    className="text-foreground hover:text-primary transition-colors"
-                  >
-                    Kontakt
-                  </a>
+                <nav className="flex flex-col space-y-4 mt-8">
+                  {navItems.map((item) => (
+                    <a
+                      key={item.id}
+                      href={`#${item.id}`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleNavigate(item.id);
+                      }}
+                      className="text-lg text-foreground hover:text-primary transition-colors"
+                    >
+                      {item.label}
+                    </a>
+                  ))}
                 </nav>
-                <Button className="w-full" asChild>
-                  <a href="mailto:audelia@bewerbungswerkstatt.ch">Kontakt aufnehmen</a>
+                <Button
+                  className="w-full bg-accent text-accent-foreground hover:bg-accent/90"
+                  asChild
+                >
+                  <a href="mailto:audelia@bewerbungswerkstatt.ch">Erstgespräch buchen</a>
                 </Button>
               </SheetContent>
             </Sheet>

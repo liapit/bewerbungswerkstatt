@@ -2,30 +2,39 @@ import consultantPortrait from "@/assets/consultant-portrait.jpg";
 
 const About = () => {
   return (
-    <section id="team" className="bg-muted py-16 lg:py-24">
+    <section id="expertin" className="bg-background py-20 lg:py-28">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="flex justify-center lg:justify-start">
-              <img 
+              <img
                 src={consultantPortrait}
-                alt="Beraterin Portrait" 
-                className="w-80 h-80 rounded-2xl object-cover object-[50%_20%]"
+                alt="Audelia Babbev-Pittet"
+                className="w-80 h-80 rounded-xl object-cover object-[50%_20%] shadow-lg"
               />
             </div>
             <div className="space-y-6">
               <h2 className="text-3xl lg:text-4xl font-bold text-primary">
-                Über mich
+                Ihre Expertin
               </h2>
               <h3 className="text-2xl font-bold text-foreground">
-                Audelia Babbev-Pittet, Bewerbungsspezialistin
+                Audelia Babbev-Pittet
               </h3>
+              <p className="text-sm font-medium text-accent uppercase tracking-wider">
+                Bewerbungsspezialistin
+              </p>
               <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
                 <p>
-                  Ich habe mir zum Ziel gesetzt Schülern zu helfen, aus der Masse herauszustechen mit nahbaren Bewerbungen.
+                  Mit jahrelanger Erfahrung in der Beratung von Fachkräften habe ich
+                  es mir zur Aufgabe gemacht, Professionals dabei zu unterstützen,
+                  sich authentisch und überzeugend zu präsentieren.
                 </p>
                 <p>
-                  Ich schreibe Bewerbungen mit Leidenschaft und das widerspiegelt sich im Text. Das möchte ich gerne an sie weitergeben! Mit den heutigen KI‑Tools kann das eine Herausforderung sein, jedoch zeige ich den Schülern wie sie es erfolgreich schaffen.
+                  Ich schreibe Bewerbungen mit Leidenschaft — und das widerspiegelt
+                  sich in jedem Text. In einer Welt voller KI-generierter Lebensläufe
+                  zeige ich Ihnen, wie Sie mit ehrlichen, menschlichen Worten den
+                  Unterschied machen. Als lokale Beraterin in der Deutschschweiz kenne
+                  ich den Markt und weiss, worauf Recruiter wirklich achten.
                 </p>
               </div>
             </div>
