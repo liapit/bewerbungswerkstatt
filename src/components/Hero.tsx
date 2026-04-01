@@ -31,7 +31,7 @@ const Hero = () => {
           <Button
             size="lg"
             variant="outline"
-            className="border-hero-foreground/30 text-hero-foreground hover:bg-hero-foreground/10 text-base px-8 py-6"
+            className="bg-transparent border-hero-foreground/60 text-hero-foreground hover:bg-hero-foreground/10 hover:text-hero-foreground text-base px-8 py-6"
             asChild
           >
             <a href="#herausforderung">Mehr erfahren</a>
