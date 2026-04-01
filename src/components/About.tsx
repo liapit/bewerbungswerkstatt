@@ -1,4 +1,5 @@
 import consultantPortrait from "@/assets/consultant-portrait.jpg";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 const About = () => {
   return (
@@ -6,38 +7,40 @@ const About = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="flex justify-center lg:justify-start">
+            <ScrollReveal className="flex justify-center lg:justify-start">
               <img
                 src={consultantPortrait}
                 alt="Audelia Babbev-Pittet"
                 className="w-80 h-80 rounded-xl object-cover object-[50%_20%] shadow-lg"
               />
-            </div>
-            <div className="space-y-6">
-              <h2 className="text-3xl lg:text-4xl font-bold text-primary">
-                Ihre Expertin
-              </h2>
-              <h3 className="text-2xl font-bold text-foreground">
-                Audelia Babbev-Pittet
-              </h3>
-              <p className="text-sm font-medium text-accent uppercase tracking-wider">
-                Bewerbungsspezialistin
-              </p>
-              <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
-                <p>
-                  Mit jahrelanger Erfahrung in der Beratung von Fachkräften habe ich
-                  es mir zur Aufgabe gemacht, Professionals dabei zu unterstützen,
-                  sich authentisch und überzeugend zu präsentieren.
+            </ScrollReveal>
+            <ScrollReveal delay="delay-[200ms]">
+              <div className="space-y-6">
+                <h2 className="text-3xl lg:text-4xl font-bold text-primary">
+                  Ihre Expertin
+                </h2>
+                <h3 className="text-2xl font-bold text-foreground">
+                  Audelia Babbev-Pittet
+                </h3>
+                <p className="text-sm font-medium text-accent uppercase tracking-wider">
+                  Bewerbungsspezialistin
                 </p>
-                <p>
-                  Ich schreibe Bewerbungen mit Leidenschaft — und das widerspiegelt
-                  sich in jedem Text. In einer Welt voller KI-generierter Lebensläufe
-                  zeige ich Ihnen, wie Sie mit ehrlichen, menschlichen Worten den
-                  Unterschied machen. Als lokale Beraterin in der Deutschschweiz kenne
-                  ich den Markt und weiss, worauf Recruiter wirklich achten.
-                </p>
+                <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
+                  <p>
+                    Mit jahrelanger Erfahrung in der Beratung von Fachkräften habe ich
+                    es mir zur Aufgabe gemacht, Professionals dabei zu unterstützen,
+                    sich authentisch und überzeugend zu präsentieren.
+                  </p>
+                  <p>
+                    Ich schreibe Bewerbungen mit Leidenschaft — und das widerspiegelt
+                    sich in jedem Text. In einer Welt voller KI-generierter Lebensläufe
+                    zeige ich Ihnen, wie Sie mit ehrlichen, menschlichen Worten den
+                    Unterschied machen. Als lokale Beraterin in der Deutschschweiz kenne
+                    ich den Markt und weiss, worauf Recruiter wirklich achten.
+                  </p>
+                </div>
               </div>
-            </div>
+            </ScrollReveal>
           </div>
         </div>
       </div>

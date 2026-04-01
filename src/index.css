@@ -165,3 +165,88 @@
 .animate-scroll:hover {
   animation-play-state: paused;
 }
+
+/* ── Hero page-load entrance ── */
+@keyframes hero-enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-enter-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.hero-animate {
+  opacity: 0;
+  animation: hero-enter 0.7s ease-out forwards;
+}
+
+.hero-animate-scale {
+  opacity: 0;
+  animation: hero-enter-scale 0.7s ease-out forwards;
+}
+
+/* ── Transformation card internal stagger ── */
+.transform-card .card-bad,
+.transform-card .card-arrow,
+.transform-card .card-good {
+  opacity: 0;
+  transition: opacity 0.45s ease-out, transform 0.45s ease-out;
+}
+
+.transform-card .card-bad {
+  transform: translateY(8px);
+}
+
+.transform-card .card-arrow {
+  transform: scale(0.75);
+  transition-delay: 0.2s;
+}
+
+.transform-card .card-good {
+  transform: translateY(8px);
+  transition-delay: 0.4s;
+}
+
+@media (min-width: 640px) {
+  .transform-card .card-good {
+    transform: translateX(12px);
+  }
+}
+
+.transform-card.revealed .card-bad,
+.transform-card.revealed .card-arrow,
+.transform-card.revealed .card-good {
+  opacity: 1;
+  transform: translateY(0) translateX(0) scale(1);
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .hero-animate,
+  .hero-animate-scale {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+
+  .transform-card .card-bad,
+  .transform-card .card-arrow,
+  .transform-card .card-good {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

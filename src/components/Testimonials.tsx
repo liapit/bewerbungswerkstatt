@@ -46,14 +46,16 @@ const TestimonialCard = ({
   </div>
 );
 
+import { ScrollReveal } from "@/components/ScrollReveal";
+
 const Testimonials = () => {
   return (
     <section className="py-16 bg-muted/50 overflow-hidden">
-      <div className="container mx-auto px-6 mb-10">
+      <ScrollReveal className="container mx-auto px-6 mb-10">
         <h2 className="text-2xl lg:text-3xl font-bold text-primary text-center">
           Das sagen unsere Kunden
         </h2>
-      </div>
+      </ScrollReveal>
 
       <div className="relative">
         <div className="flex gap-6 animate-scroll">

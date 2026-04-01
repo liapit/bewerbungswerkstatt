@@ -4,24 +4,24 @@ const Hero = () => {
   return (
     <section id="hero" className="relative overflow-hidden bg-hero text-hero-foreground min-h-screen flex items-center">
       <div className="container mx-auto px-6 py-16 text-center max-w-4xl relative z-10">
-        <span className="inline-block text-sm font-medium tracking-widest uppercase text-accent mb-6">
+        <span className="hero-animate inline-block text-sm font-medium tracking-widest uppercase text-accent mb-6" style={{ animationDelay: "0.1s" }}>
           Für Professionals in Tech, Banking & Back Office
         </span>
 
-        <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold leading-[1.1] mb-6">
+        <h1 className="hero-animate text-4xl md:text-5xl lg:text-7xl font-extrabold leading-[1.1] mb-6" style={{ animationDelay: "0.2s" }}>
           Heben Sie sich ab
           <br />
           <span className="text-accent">von der KI-generierten Masse</span>
         </h1>
 
-        <p className="text-lg lg:text-xl text-hero-foreground/70 max-w-2xl mx-auto mb-10 leading-relaxed">
+        <p className="hero-animate text-lg lg:text-xl text-hero-foreground/70 max-w-2xl mx-auto mb-10 leading-relaxed" style={{ animationDelay: "0.4s" }}>
           Wir helfen Ihnen, Ihren besten Lebenslauf zu schreiben — authentisch,
           überzeugend und menschlich. Keine generischen Phrasen, sondern echte Worte,
           die Recruiter überzeugen.
         </p>
 
         {/* CSS-only visual: Grid of identical CVs, one stands out */}
-        <div className="max-w-lg mx-auto">
+        <div className="hero-animate-scale max-w-lg mx-auto" style={{ animationDelay: "0.6s" }}>
           <div className="grid grid-cols-4 gap-2 sm:gap-3">
             {Array.from({ length: 8 }).map((_, i) => {
               const isHighlighted = i === 5;

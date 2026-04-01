@@ -4,6 +4,7 @@ import {
   FilePenLine,
   MapPin,
 } from "lucide-react";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 const services = [
   {
@@ -32,31 +33,30 @@ const Offers = () => {
   return (
     <section id="angebot" className="bg-background py-20 lg:py-28">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
+        <ScrollReveal className="text-center mb-16">
           <h2 className="text-3xl lg:text-5xl font-bold text-primary mb-4">
             Unsere Dienstleistungen
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Massgeschneiderte Unterstützung für Ihre Karriere in der Deutschschweiz.
           </p>
-        </div>
+        </ScrollReveal>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {services.map((service) => (
-            <div
-              key={service.title}
-              className="bg-card rounded-xl p-8 shadow-sm border border-border hover:shadow-md transition-shadow"
-            >
-              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-5">
-                <service.icon className="w-6 h-6 text-primary" />
+          {services.map((service, i) => (
+            <ScrollReveal key={service.title} delay={i > 0 ? `delay-[${i * 100}ms]` : ""}>
+              <div className="bg-card rounded-xl p-8 shadow-sm border border-border hover:shadow-md transition-shadow">
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-5">
+                  <service.icon className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold text-foreground mb-3">
+                  {service.title}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  {service.text}
+                </p>
               </div>
-              <h3 className="text-xl font-semibold text-foreground mb-3">
-                {service.title}
-              </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                {service.text}
-              </p>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>
