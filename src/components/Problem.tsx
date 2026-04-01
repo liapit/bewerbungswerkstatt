@@ -54,6 +54,17 @@ const Problem = () => {
           Lebensläufe und Motivationsschreiben zu erstellen. Ihr CV sieht aus wie
           jeder andere — und landet auf demselben Stapel.
         </p>
+
+        <p className="text-center mt-6">
+          <a
+            href="https://www.seco.admin.ch/seco/de/home/Publikationen_Dienstleistungen/Publikationen_und_Formulare/Arbeit/Arbeitslosenversicherung/Die_Lage_auf_dem_Arbeitsmarkt/lage_arbeitsmarkt_2026.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-muted-foreground hover:text-primary underline underline-offset-4"
+          >
+            Offizieller Arbeitsmarktbericht 2026 (SECO)
+          </a>
+        </p>
       </div>
     </section>
   );
