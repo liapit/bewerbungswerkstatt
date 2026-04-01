@@ -59,7 +59,7 @@ const Pricing = () => {
                 <span
                   className={`inline-block self-start text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-6 ${
                     plan.highlighted
-                      ? "bg-accent/15 text-accent-foreground"
+                      ? "bg-accent/15 text-accent"
                       : "bg-muted text-muted-foreground"
                   }`}
                 >
