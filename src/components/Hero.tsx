@@ -20,24 +20,6 @@ const Hero = () => {
           die Recruiter überzeugen.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-20">
-          <Button
-            size="lg"
-            className="bg-accent text-accent-foreground hover:bg-accent/90 text-base px-8 py-6"
-            asChild
-          >
-            <a href="mailto:audelia@bewerbungswerkstatt.ch">Erstgespräch buchen — 95 CHF</a>
-          </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            className="bg-transparent border-hero-foreground/60 text-hero-foreground hover:bg-hero-foreground/10 hover:text-hero-foreground text-base px-8 py-6"
-            asChild
-          >
-            <a href="#herausforderung">Mehr erfahren</a>
-          </Button>
-        </div>
-
         {/* CSS-only visual: Grid of identical CVs, one stands out */}
         <div className="max-w-lg mx-auto">
           <div className="grid grid-cols-4 gap-2 sm:gap-3">
