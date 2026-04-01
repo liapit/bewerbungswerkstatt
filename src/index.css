@@ -166,6 +166,72 @@
   animation-play-state: paused;
 }
 
+/* ── Hero CV stream ── */
+@keyframes cv-stream {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes cv-stream-reverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-cv-stream {
+  animation: cv-stream var(--cv-stream-speed, 45s) linear infinite;
+}
+
+.animate-cv-stream-reverse {
+  animation: cv-stream-reverse var(--cv-stream-speed-reverse, 50s) linear infinite;
+}
+
+
+.cv-stream-track {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    white 12%,
+    white 88%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    white 12%,
+    white 88%,
+    transparent 100%
+  );
+}
+
+.cv-stream-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 30% 120% at 50% 50%,
+    hsl(var(--accent) / 0.25) 0%,
+    hsl(var(--accent) / 0.1) 40%,
+    transparent 70%
+  );
+}
+
+.cv-stream-container::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 11;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    hsl(var(--hero-bg)) 0%,
+    transparent 25%,
+    transparent 75%,
+    hsl(var(--hero-bg)) 100%
+  );
+}
+
 /* ── Hero page-load entrance ── */
 @keyframes hero-enter {
   from {
@@ -240,6 +306,16 @@
   .hero-animate-scale {
     animation: none !important;
     opacity: 1 !important;
+  }
+
+  .animate-cv-stream,
+  .animate-cv-stream-reverse {
+    animation: none !important;
+  }
+
+  .cv-stream-track {
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
   }
 
   .transform-card .card-bad,
