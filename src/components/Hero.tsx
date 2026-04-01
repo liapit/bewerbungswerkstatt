@@ -1,73 +1,54 @@
-import { useRef, useMemo } from "react";
+import { useRef } from "react";
 import {
-  CV_STREAM_CARD_COUNT,
   CV_STREAM_SPEED,
   CV_STREAM_SPEED_REVERSE,
   CV_STREAM_HOVER_SPEED,
-  CV_STREAM_HIGHLIGHT_CHANCE,
 } from "@/lib/constants";
 
-const CV_VARIANTS = [
-  {
-    hasPhoto: true,
-    headerLines: ["w-1/2", "w-1/3"],
-    bodyLines: ["w-full", "w-5/6", "w-full", "w-3/4", "w-full", "w-2/3"],
-    hasBlock: false,
-  },
-  {
-    hasPhoto: false,
-    headerLines: ["w-2/3", "w-2/5"],
-    bodyLines: ["w-full", "w-4/5", "w-full", "w-5/6", "w-3/4"],
-    hasBlock: true,
-  },
-  {
-    hasPhoto: true,
-    headerLines: ["w-3/5", "w-1/4"],
-    bodyLines: ["w-5/6", "w-full", "w-2/3", "w-full", "w-4/5", "w-full"],
-    hasBlock: false,
-  },
-  {
-    hasPhoto: false,
-    headerLines: ["w-1/2", "w-1/3"],
-    bodyLines: ["w-full", "w-3/4", "w-full", "w-5/6", "w-full"],
-    hasBlock: true,
-  },
-  {
-    hasPhoto: true,
-    headerLines: ["w-2/5", "w-1/2"],
-    bodyLines: ["w-full", "w-full", "w-3/4", "w-5/6", "w-full", "w-2/3"],
-    hasBlock: false,
-  },
-  {
-    hasPhoto: false,
-    headerLines: ["w-3/4", "w-1/3"],
-    bodyLines: ["w-4/5", "w-full", "w-full", "w-2/3", "w-5/6"],
-    hasBlock: true,
-  },
-  {
-    hasPhoto: true,
-    headerLines: ["w-1/2", "w-2/5"],
-    bodyLines: ["w-full", "w-5/6", "w-3/4", "w-full", "w-full", "w-4/5"],
-    hasBlock: false,
-  },
-  {
-    hasPhoto: false,
-    headerLines: ["w-2/3", "w-1/4"],
-    bodyLines: ["w-full", "w-full", "w-5/6", "w-3/4", "w-full"],
-    hasBlock: true,
-  },
+// Each entry is one card in the conveyor. `highlighted` is baked in (~1 in 10).
+// The entire array is duplicated at render time for the seamless loop.
+const ROW_1_CARDS = [
+  { hasPhoto: true,  headerLines: ["w-1/2", "w-1/3"], bodyLines: ["w-full", "w-5/6", "w-full", "w-3/4", "w-full", "w-2/3"], hasBlock: false, highlighted: false },
+  { hasPhoto: false, headerLines: ["w-2/3", "w-2/5"], bodyLines: ["w-full", "w-4/5", "w-full", "w-5/6", "w-3/4"],           hasBlock: true,  highlighted: false },
+  { hasPhoto: true,  headerLines: ["w-3/5", "w-1/4"], bodyLines: ["w-5/6", "w-full", "w-2/3", "w-full", "w-4/5", "w-full"], hasBlock: false, highlighted: false },
+  { hasPhoto: false, headerLines: ["w-1/2", "w-1/3"], bodyLines: ["w-full", "w-3/4", "w-full", "w-5/6", "w-full"],           hasBlock: true,  highlighted: false  },
+  { hasPhoto: true,  headerLines: ["w-2/5", "w-1/2"], bodyLines: ["w-full", "w-full", "w-3/4", "w-5/6", "w-full", "w-2/3"], hasBlock: false, highlighted: false },
+  { hasPhoto: false, headerLines: ["w-3/4", "w-1/3"], bodyLines: ["w-4/5", "w-full", "w-full", "w-2/3", "w-5/6"],           hasBlock: true,  highlighted: false },
+  { hasPhoto: true,  headerLines: ["w-1/2", "w-2/5"], bodyLines: ["w-full", "w-5/6", "w-3/4", "w-full", "w-full", "w-4/5"], hasBlock: false, highlighted: false },
+  { hasPhoto: false, headerLines: ["w-2/3", "w-1/4"], bodyLines: ["w-full", "w-full", "w-5/6", "w-3/4", "w-full"],           hasBlock: true,  highlighted: false },
+  { hasPhoto: true,  headerLines: ["w-3/5", "w-1/3"], bodyLines: ["w-full", "w-3/4", "w-full", "w-5/6", "w-2/3", "w-full"], hasBlock: false, highlighted: false },
+  { hasPhoto: false, headerLines: ["w-1/2", "w-2/5"], bodyLines: ["w-5/6", "w-full", "w-full", "w-3/4", "w-full"],           hasBlock: true,  highlighted: false },
+  { hasPhoto: true,  headerLines: ["w-2/3", "w-1/4"], bodyLines: ["w-full", "w-full", "w-2/3", "w-5/6", "w-full", "w-3/4"], hasBlock: false, highlighted: false },
+  { hasPhoto: false, headerLines: ["w-3/4", "w-1/3"], bodyLines: ["w-full", "w-4/5", "w-full", "w-2/3", "w-5/6"],           hasBlock: true,  highlighted: false },
+  { hasPhoto: true,  headerLines: ["w-1/2", "w-1/3"], bodyLines: ["w-5/6", "w-full", "w-3/4", "w-full", "w-full", "w-2/3"], hasBlock: false, highlighted: false },
+  { hasPhoto: false, headerLines: ["w-2/5", "w-1/2"], bodyLines: ["w-full", "w-5/6", "w-full", "w-3/4", "w-full"],           hasBlock: true,  highlighted: true  },
+  { hasPhoto: true,  headerLines: ["w-3/5", "w-2/5"], bodyLines: ["w-full", "w-2/3", "w-5/6", "w-full", "w-3/4", "w-full"], hasBlock: false, highlighted: false },
+  { hasPhoto: false, headerLines: ["w-2/3", "w-1/3"], bodyLines: ["w-full", "w-full", "w-3/4", "w-5/6", "w-full"],           hasBlock: true,  highlighted: false },
 ];
 
-const randomHighlights = (count: number, chance = CV_STREAM_HIGHLIGHT_CHANCE) => {
-  const set = new Set<number>();
-  for (let i = 0; i < count; i++) {
-    if (Math.random() < chance) set.add(i);
-  }
-  return set;
-};
+const ROW_2_CARDS = [
+  { hasPhoto: false, headerLines: ["w-2/3", "w-2/5"], bodyLines: ["w-full", "w-4/5", "w-full", "w-5/6", "w-3/4"],           hasBlock: true,  highlighted: false },
+  { hasPhoto: true,  headerLines: ["w-1/2", "w-1/3"], bodyLines: ["w-full", "w-5/6", "w-full", "w-3/4", "w-full", "w-2/3"], hasBlock: false, highlighted: false},
+  { hasPhoto: false, headerLines: ["w-3/4", "w-1/3"], bodyLines: ["w-4/5", "w-full", "w-full", "w-2/3", "w-5/6"],           hasBlock: true,  highlighted: false },
+  { hasPhoto: true,  headerLines: ["w-3/5", "w-1/4"], bodyLines: ["w-5/6", "w-full", "w-2/3", "w-full", "w-4/5", "w-full"], hasBlock: false, highlighted: false },
+  { hasPhoto: false, headerLines: ["w-1/2", "w-1/3"], bodyLines: ["w-full", "w-3/4", "w-full", "w-5/6", "w-full"],           hasBlock: true,  highlighted: false },
+  { hasPhoto: true,  headerLines: ["w-2/5", "w-1/2"], bodyLines: ["w-full", "w-full", "w-3/4", "w-5/6", "w-full", "w-2/3"], hasBlock: false, highlighted: false },
+  { hasPhoto: false, headerLines: ["w-2/3", "w-1/4"], bodyLines: ["w-full", "w-full", "w-5/6", "w-3/4", "w-full"],           hasBlock: true,  highlighted: false  },
+  { hasPhoto: true,  headerLines: ["w-1/2", "w-2/5"], bodyLines: ["w-full", "w-5/6", "w-3/4", "w-full", "w-full", "w-4/5"], hasBlock: false, highlighted: false },
+  { hasPhoto: false, headerLines: ["w-3/5", "w-1/3"], bodyLines: ["w-full", "w-3/4", "w-full", "w-2/3", "w-5/6"],           hasBlock: true,  highlighted: false },
+  { hasPhoto: true,  headerLines: ["w-2/3", "w-1/4"], bodyLines: ["w-full", "w-full", "w-2/3", "w-5/6", "w-full", "w-3/4"], hasBlock: false, highlighted: false },
+  { hasPhoto: false, headerLines: ["w-1/2", "w-2/5"], bodyLines: ["w-5/6", "w-full", "w-full", "w-3/4", "w-full"],           hasBlock: true,  highlighted: false },
+  { hasPhoto: true,  headerLines: ["w-3/4", "w-1/3"], bodyLines: ["w-full", "w-4/5", "w-full", "w-2/3", "w-5/6", "w-full"], hasBlock: false, highlighted: false },
+  { hasPhoto: false, headerLines: ["w-2/5", "w-1/2"], bodyLines: ["w-full", "w-5/6", "w-full", "w-3/4", "w-full"],           hasBlock: true,  highlighted: true },
+  { hasPhoto: true,  headerLines: ["w-1/2", "w-1/3"], bodyLines: ["w-5/6", "w-full", "w-3/4", "w-full", "w-full", "w-2/3"], hasBlock: false, highlighted: false },
+  { hasPhoto: false, headerLines: ["w-3/5", "w-2/5"], bodyLines: ["w-full", "w-full", "w-3/4", "w-5/6", "w-full"],           hasBlock: true,  highlighted: false },
+  { hasPhoto: true,  headerLines: ["w-2/3", "w-1/3"], bodyLines: ["w-full", "w-2/3", "w-5/6", "w-full", "w-3/4", "w-full"], hasBlock: false, highlighted: false  },
+];
 
-const CvCard = ({ variant, highlighted }: { variant: number; highlighted?: boolean }) => {
-  const v = CV_VARIANTS[variant % CV_VARIANTS.length];
+type CardData = (typeof ROW_1_CARDS)[number];
+
+const CvCard = ({ card }: { card: CardData }) => {
+  const { highlighted, hasPhoto, headerLines, bodyLines, hasBlock } = card;
   const line = highlighted ? "bg-accent/40" : "bg-white/10";
   const lineBold = highlighted ? "bg-accent/50" : "bg-white/15";
   const sep = highlighted ? "bg-accent/25" : "bg-white/8";
@@ -75,36 +56,32 @@ const CvCard = ({ variant, highlighted }: { variant: number; highlighted?: boole
 
   return (
     <div
-      className={`flex-shrink-0 w-20 sm:w-24 aspect-[3/4] rounded-sm p-2 sm:p-3 flex flex-col gap-1.5 overflow-hidden transition-none ${
+      className={`flex-shrink-0 w-20 sm:w-24 ml-3 aspect-[3/4] rounded-sm p-2 sm:p-3 flex flex-col gap-1.5 overflow-hidden transition-none ${
         highlighted
           ? "border-2 border-accent bg-accent/10 shadow-lg shadow-accent/20 scale-105"
           : "border border-white/15 bg-white/[0.03]"
       }`}
     >
-      {/* Header area: photo + name lines, or just name lines */}
-      <div className={`flex gap-1.5 items-start ${v.hasPhoto ? "" : "flex-col"}`}>
-        {v.hasPhoto && (
+      <div className={`flex gap-1.5 items-start ${hasPhoto ? "" : "flex-col"}`}>
+        {hasPhoto && (
           <div className={`flex-shrink-0 w-3 h-3 sm:w-4 sm:h-4 rounded-full ${highlighted ? "bg-accent/30" : "bg-white/10"}`} />
         )}
-        <div className={`space-y-1 ${v.hasPhoto ? "flex-1 pt-0.5" : "w-full"}`}>
-          {v.headerLines.map((w, i) => (
+        <div className={`space-y-1 ${hasPhoto ? "flex-1 pt-0.5" : "w-full"}`}>
+          {headerLines.map((w, i) => (
             <div key={i} className={`h-[2px] rounded-full ${w} ${lineBold}`} />
           ))}
         </div>
       </div>
 
-      {/* Separator line */}
       <div className={`h-px w-full ${sep}`} />
 
-      {/* Body text lines */}
       <div className="space-y-1 flex-1">
-        {v.bodyLines.map((w, i) => (
+        {bodyLines.map((w, i) => (
           <div key={i} className={`h-[2px] rounded-full ${w} ${line}`} />
         ))}
       </div>
 
-      {/* Optional block element (skills bar, table, etc.) */}
-      {v.hasBlock && (
+      {hasBlock && (
         <div className="flex gap-0.5 mt-auto">
           <div className={`h-1.5 w-1/3 rounded-sm ${block}`} />
           <div className={`h-1.5 w-1/4 rounded-sm ${highlighted ? "bg-accent/25" : "bg-white/6"}`} />
@@ -115,17 +92,13 @@ const CvCard = ({ variant, highlighted }: { variant: number; highlighted?: boole
   );
 };
 
-const CvStream = ({ reverse }: { reverse?: boolean }) => {
-  const totalCards = CV_STREAM_CARD_COUNT * 2;
-  // Highlights only for the first half; duplicate half mirrors them for seamless loop
-  const highlights = useMemo(() => randomHighlights(CV_STREAM_CARD_COUNT), []);
+const CvStream = ({ cards, reverse }: { cards: CardData[]; reverse?: boolean }) => {
   const stripRef = useRef<HTMLDivElement>(null);
 
   const setSpeed = (rate: number) => {
     const el = stripRef.current;
     if (!el) return;
-    const anims = el.getAnimations();
-    for (const a of anims) a.playbackRate = rate;
+    for (const a of el.getAnimations()) a.playbackRate = rate;
   };
 
   return (
@@ -136,14 +109,15 @@ const CvStream = ({ reverse }: { reverse?: boolean }) => {
     >
       <div
         ref={stripRef}
-        className={`flex gap-3 ${reverse ? "animate-cv-stream-reverse" : "animate-cv-stream"} py-2`}
+        className={`flex ${reverse ? "animate-cv-stream-reverse" : "animate-cv-stream"} py-2`}
       >
-        {Array.from({ length: totalCards }).map((_, i) => (
-          <CvCard
-            key={i}
-            variant={(reverse ? i + 3 : i) % CV_STREAM_CARD_COUNT}
-            highlighted={highlights.has(i % CV_STREAM_CARD_COUNT)}
-          />
+        {/* First set */}
+        {cards.map((card, i) => (
+          <CvCard key={i} card={card} />
+        ))}
+        {/* Identical duplicate for seamless loop */}
+        {cards.map((card, i) => (
+          <CvCard key={`d-${i}`} card={card} />
         ))}
       </div>
     </div>
@@ -181,12 +155,12 @@ const Hero = () => {
               "--cv-stream-speed-reverse": `${CV_STREAM_SPEED_REVERSE}s`,
             } as React.CSSProperties}
           >
-            <CvStream reverse />
+            <CvStream cards={ROW_1_CARDS} reverse />
             <div className="h-3" />
-            <CvStream />
+            <CvStream cards={ROW_2_CARDS} />
           </div>
           <p className="text-sm text-hero-foreground/30 mt-4">
-            Dutzende Bewerbungen. Fast alle identisch. Welche sticht heraus?
+            Hunderte Bewerbungen. Fast alle identisch. Welche sticht heraus?
           </p>
         </div>
       </div>

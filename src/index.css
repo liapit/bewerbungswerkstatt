@@ -203,20 +203,6 @@
   );
 }
 
-.cv-stream-container::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 10;
-  pointer-events: none;
-  background: radial-gradient(
-    ellipse 30% 120% at 50% 50%,
-    hsl(var(--accent) / 0.25) 0%,
-    hsl(var(--accent) / 0.1) 40%,
-    transparent 70%
-  );
-}
-
 .cv-stream-container::after {
   content: '';
   position: absolute;
