@@ -7,11 +7,12 @@ const plans = [
     tag: "Einstieg",
     title: "Erstgespräch",
     price: "95",
-    duration: "60 Minuten",
+    duration: "Bis zu 45 Minuten",
     features: [
       "Analyse Ihrer aktuellen Unterlagen",
       "Identifikation der grössten Verbesserungspotenziale",
       "Konkreter Massnahmenplan",
+      "Vollständig online",
       "Unverbindlich",
     ],
     cta: "Termin vereinbaren",
