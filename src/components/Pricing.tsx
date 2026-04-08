@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Check } from "lucide-react";
+import { Check, ShieldCheck } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
 const plans = [
@@ -15,6 +15,7 @@ const plans = [
       "Unverbindlich",
     ],
     cta: "Termin vereinbaren",
+    guarantee: "Nicht zufrieden? Volle Rückerstattung.",
     highlighted: true,
   },
   {
@@ -97,6 +98,12 @@ const Pricing = () => {
                 >
                   <a href="mailto:audelia@bewerbungswerkstatt.ch">{plan.cta}</a>
                 </Button>
+                {plan.guarantee && (
+                  <p className="mt-3 flex items-center justify-center gap-1.5 text-sm text-muted-foreground">
+                    <ShieldCheck className="w-4 h-4 text-accent flex-shrink-0" />
+                    {plan.guarantee}
+                  </p>
+                )}
               </div>
             </ScrollReveal>
           ))}
