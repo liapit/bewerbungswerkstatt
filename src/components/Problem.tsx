@@ -16,7 +16,7 @@ const stats: StatData[] = [
     target: 5,
     suffix: "",
     label: "Stellensuchende pro offene Stelle",
-    subtext: "Der Wettbewerb war noch nie so gross.",
+    subtext: "Der Schweizer Arbeitsmarkt erlebt einen sehr hohen Wettbewerb.",
     citation: "*",
   },
   {
@@ -92,8 +92,7 @@ const Problem = () => {
 
         <ScrollReveal className="max-w-3xl mx-auto text-center">
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Der Schweizer Arbeitsmarkt erlebt den stärksten Wettbewerb seit über
-            10 Jahren. Alle benutzen dieselben KI-Tools, um dieselben generischen
+            Der Schweizer Arbeitsmarkt bleibt hart umkämpft: Im März 2026 standen 234’815 registrierten Stellensuchenden 48’843 beim RAV gemeldete offene Stellen gegenüber. Alle benutzen dieselben KI-Tools, um dieselben generischen
             Lebensläufe und Motivationsschreiben zu erstellen. Ihr CV sieht aus wie
             jeder andere — und landet auf demselben Stapel.
           </p>
