@@ -1,3 +1,5 @@
+"use client";
+
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { useCountUp } from "@/hooks/use-count-up";

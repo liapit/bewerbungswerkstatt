@@ -1,3 +1,5 @@
+"use client";
+
 import Header from "@/components/Header";
 import StickyNav from "@/components/StickyNav";
 import Hero from "@/components/Hero";

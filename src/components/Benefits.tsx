@@ -1,3 +1,5 @@
+"use client";
+
 import { ArrowRight, ArrowDown } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";

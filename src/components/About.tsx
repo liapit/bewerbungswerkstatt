@@ -1,4 +1,7 @@
+"use client";
+
 import consultantPortrait from "@/assets/consultant-portrait.jpg";
+import type { StaticImageData } from "next/image";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
 const About = () => {
@@ -9,7 +12,7 @@ const About = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <ScrollReveal className="flex justify-center lg:justify-start">
               <img
-                src={consultantPortrait}
+                src={(consultantPortrait as StaticImageData).src}
                 alt="Audelia Babbev-Pittet"
                 className="w-80 h-80 rounded-xl object-cover object-[50%_20%] shadow-lg"
               />

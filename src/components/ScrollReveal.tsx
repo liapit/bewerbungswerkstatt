@@ -1,3 +1,5 @@
+"use client";
+
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { cn } from "@/lib/utils";
 

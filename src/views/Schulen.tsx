@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import {
@@ -18,6 +20,7 @@ import {
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import consultantPortrait from "@/assets/consultant-portrait.jpg";
+import type { StaticImageData } from "next/image";
 
 const Schulen = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -274,7 +277,7 @@ const Schulen = () => {
           <div className="max-w-4xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="flex justify-center lg:justify-start">
-                <img src={consultantPortrait} alt="Beraterin Portrait" className="w-80 h-80 rounded-2xl object-cover object-[50%_20%]" />
+                <img src={(consultantPortrait as StaticImageData).src} alt="Beraterin Portrait" className="w-80 h-80 rounded-2xl object-cover object-[50%_20%]" />
               </div>
               <div className="space-y-6">
                 <h2 className="text-3xl lg:text-4xl font-bold text-primary">Über mich</h2>
