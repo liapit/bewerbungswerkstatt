@@ -49,7 +49,7 @@ const Header = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <img
-            src="/images/logo.png"
+            src="/images/logo_darkmode.png"
             alt="Bewerbungswerkstatt Logo"
             className="h-10 w-auto"
           />
