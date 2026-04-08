@@ -68,9 +68,9 @@ const Header = () => {
           </nav>
           <Button
             className="hidden min-[900px]:flex bg-accent text-accent-foreground hover:bg-accent/90"
-            asChild
+            onClick={() => document.getElementById("preise")?.scrollIntoView({ behavior: "smooth" })}
           >
-            <a href="mailto:audelia@bewerbungswerkstatt.ch">Erstgespräch buchen</a>
+            Erstgespräch buchen
           </Button>
           <div className="min-[900px]:hidden">
             <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
@@ -107,9 +107,9 @@ const Header = () => {
                 </nav>
                 <Button
                   className="w-full bg-accent text-accent-foreground hover:bg-accent/90"
-                  asChild
+                  onClick={() => handleNavigate("preise")}
                 >
-                  <a href="mailto:audelia@bewerbungswerkstatt.ch">Erstgespräch buchen</a>
+                  Erstgespräch buchen
                 </Button>
               </SheetContent>
             </Sheet>

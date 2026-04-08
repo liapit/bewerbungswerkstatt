@@ -35,8 +35,11 @@ const StickyNav = ({ heroRef }: StickyNavProps) => {
             alt="Bewerbungswerkstatt Logo"
             className="h-8 w-auto"
           />
-          <Button className="bg-accent text-accent-foreground hover:bg-accent/90" asChild>
-            <a href="mailto:audelia@bewerbungswerkstatt.ch">Erstgespräch buchen</a>
+          <Button
+            className="bg-accent text-accent-foreground hover:bg-accent/90"
+            onClick={() => document.getElementById("preise")?.scrollIntoView({ behavior: "smooth" })}
+          >
+            Erstgespräch buchen
           </Button>
         </div>
       </div>

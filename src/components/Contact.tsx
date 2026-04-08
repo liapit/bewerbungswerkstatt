@@ -49,9 +49,9 @@ const Contact = () => {
           <Button
             size="lg"
             className="bg-accent text-accent-foreground hover:bg-accent/90 text-base px-10 py-6"
-            asChild
+            onClick={() => document.getElementById("preise")?.scrollIntoView({ behavior: "smooth" })}
           >
-            <a href="mailto:audelia@bewerbungswerkstatt.ch">Erstgespräch buchen</a>
+            Erstgespräch buchen
           </Button>
         </ScrollReveal>
       </div>
