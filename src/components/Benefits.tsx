@@ -1,6 +1,8 @@
 import { ArrowRight, ArrowDown } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass, faStar, faPen } from "@fortawesome/free-solid-svg-icons";
 
 const Benefits = () => {
   return (
@@ -18,10 +20,10 @@ const Benefits = () => {
         {/* Three steps */}
         <div className="grid md:grid-cols-3 gap-8 lg:gap-12 max-w-5xl mx-auto mb-20">
           {steps.map((step, i) => (
-            <ScrollReveal key={step.number} delay={i > 0 ? `delay-[${i * 200}ms]` : ""}>
+            <ScrollReveal key={step.title} delay={i > 0 ? `delay-[${i * 200}ms]` : ""}>
               <div className="text-center">
-                <div className="w-14 h-14 rounded-full bg-accent text-accent-foreground flex items-center justify-center text-2xl font-bold mx-auto mb-6">
-                  {step.number}
+                <div className="w-14 h-14 rounded-full bg-accent text-accent-foreground flex items-center justify-center text-2xl mx-auto mb-6">
+                  <FontAwesomeIcon icon={step.icon} />
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-3">
                   {step.title}
@@ -57,17 +59,17 @@ const Benefits = () => {
 
 const steps = [
   {
-    number: "1",
+    icon: faMagnifyingGlass,
     title: "Menschliche Analyse",
     text: "Ein echter Experte analysiert Ihren Lebenslauf — nicht ein Algorithmus, sondern jemand, der den Schweizer Arbeitsmarkt kennt.",
   },
   {
-    number: "2",
+    icon: faStar,
     title: "Erster Eindruck optimieren",
     text: "Struktur, Layout, Kernaussagen — wir optimieren alles, was in den ersten 8 Sekunden zählt.",
   },
   {
-    number: "3",
+    icon: faPen,
     title: "Ehrlicher, menschlicher Text",
     text: "Keine generischen KI-Phrasen. Echte Worte, die Ihre tatsächlichen Stärken und Erfahrungen zeigen.",
   },

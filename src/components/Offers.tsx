@@ -1,3 +1,4 @@
+import { useRef, useState, useEffect } from "react";
 import {
   ClipboardCheck,
   MessageSquare,
@@ -30,6 +31,22 @@ const services = [
 ];
 
 const Offers = () => {
+  const bannerRef = useRef<HTMLDivElement>(null);
+  const [bgY, setBgY] = useState(60);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const el = bannerRef.current;
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      const progress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
+      setBgY(40 + Math.max(0, Math.min(1, progress)) * 40);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <section id="angebot" className="bg-background py-20 lg:py-28">
       <div className="container mx-auto px-6">
@@ -59,6 +76,29 @@ const Offers = () => {
             </ScrollReveal>
           ))}
         </div>
+
+        <ScrollReveal className="mt-12 max-w-5xl mx-auto">
+          <div
+            ref={bannerRef}
+            className="relative rounded-2xl overflow-hidden min-h-[180px] flex items-center justify-center"
+            style={{
+              backgroundImage: "url(/images/zurich-panorama.jpeg)",
+              backgroundSize: "cover",
+              backgroundPosition: `center ${bgY}%`,
+            }}
+          >
+            <div className="absolute inset-0 bg-primary/80" />
+            <div className="relative text-center text-white px-8 py-10">
+              <div className="text-5xl mb-4">🇨🇭</div>
+              <h3 className="text-2xl lg:text-3xl font-bold mb-3">
+                Lokal verankert. Persönlich engagiert.
+              </h3>
+              <p className="text-white/80 max-w-xl mx-auto leading-relaxed">
+                Unsere Berater leben und arbeiten in der Deutschschweiz — sie kennen den Markt, die Kultur und die Erwartungen Ihrer zukünftigen Arbeitgeber.
+              </p>
+            </div>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );
