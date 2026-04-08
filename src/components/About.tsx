@@ -27,13 +27,13 @@ const About = () => {
                 </p>
                 <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
                   <p>
-                    Mit jahrelanger Erfahrung in der Beratung von Fachkräften habe ich
-                    es mir zur Aufgabe gemacht, Professionals dabei zu unterstützen,
-                    sich authentisch und überzeugend zu präsentieren.
+                    Mit mehr als 5 Jahre Erfahrung in der Beratung von Stellensuchenden habe ich
+                    es mir zur Aufgabe gemacht, Sie dabei zu unterstützen,
+                    sich authentisch und überzeugend zu bewerben.
                   </p>
                   <p>
                     Ich schreibe Bewerbungen mit Leidenschaft — und das widerspiegelt
-                    sich in jedem Text. In einer Welt voller KI-generierter Lebensläufe
+                    sich in jedem Text. In einer Welt voller KI-generierter Lebensläufe und Motivationsschreiben
                     zeige ich Ihnen, wie Sie mit ehrlichen, menschlichen Worten den
                     Unterschied machen. Als lokale Beraterin in der Deutschschweiz kenne
                     ich den Markt und weiss, worauf Recruiter wirklich achten.
