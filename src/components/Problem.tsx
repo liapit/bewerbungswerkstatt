@@ -7,26 +7,31 @@ interface StatData {
   suffix: string;
   label: string;
   subtext: string;
+  citation?: string;
+  displayText?: string;
 }
 
 const stats: StatData[] = [
   {
-    target: 300,
-    suffix: "+",
-    label: "Bewerbungen pro Stelle",
+    target: 5,
+    suffix: "",
+    label: "Stellensuchende pro offene Stelle",
     subtext: "Der Wettbewerb war noch nie so gross.",
+    citation: "*",
   },
   {
-    target: 85,
-    suffix: "%",
-    label: "identische KI-Lebensläufe",
+    target: 0,
+    suffix: "",
+    displayText: "Mehrheit",
+    label: "der Bewerbungen sind identische KI-Lebensläufe",
     subtext: "ChatGPT, gleiche Prompts, gleiche Resultate.",
   },
   {
-    target: 8,
-    suffix: " Sek.",
-    label: "für den ersten Eindruck",
-    subtext: "So lange schaut ein Recruiter Ihren CV an.",
+    target: 200,
+    suffix: "+",
+    label: "Bewerbungen auf beliebte Finance-Stellen",
+    subtext: "Bei Rollen in Tech, Banking & Finance ist der Wettbewerb besonders hart.",
+    citation: "**",
   },
 ];
 
@@ -46,9 +51,14 @@ function StatCard({ stat, delay }: { stat: StatData; delay: string }) {
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3 sm:translate-y-4"
       }`}
     >
-      <p className="text-5xl lg:text-7xl font-extrabold text-primary mb-2 tabular-nums">
-        {display}
-      </p>
+      <div className="relative inline-flex items-start mb-2">
+        <p className={`font-extrabold text-primary ${stat.displayText ? "text-4xl lg:text-5xl" : "text-5xl lg:text-7xl tabular-nums"}`}>
+          {stat.displayText ?? display}
+        </p>
+        {stat.citation && (
+          <span className="text-sm font-normal text-muted-foreground/50 mt-1 ml-0.5">{stat.citation}</span>
+        )}
+      </div>
       <p className="text-lg font-semibold text-foreground mb-1">
         {stat.label}
       </p>
@@ -88,15 +98,23 @@ const Problem = () => {
             jeder andere — und landet auf demselben Stapel.
           </p>
 
-          <p className="text-center mt-6">
-            <a
+          <p className="text-xs text-muted-foreground mt-8 text-center space-y-1">
+            <span className="block">* <a
               href="https://www.seco.admin.ch/seco/de/home/Publikationen_Dienstleistungen/Publikationen_und_Formulare/Arbeit/Arbeitslosenversicherung/Die_Lage_auf_dem_Arbeitsmarkt/lage_arbeitsmarkt_2026.html"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-muted-foreground hover:text-primary underline underline-offset-4"
+              className="hover:text-primary underline underline-offset-4"
             >
               Offizieller Arbeitsmarktbericht 2026 (SECO)
-            </a>
+            </a></span>
+            <span className="block">** <a
+              href="https://economicgraph.linkedin.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primary underline underline-offset-4"
+            >
+              LinkedIn Economic Graph
+            </a></span>
           </p>
         </ScrollReveal>
       </div>
