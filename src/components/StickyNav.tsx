@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 
 interface StickyNavProps {
-  heroRef: React.RefObject<HTMLDivElement>;
+  heroRef: React.RefObject<HTMLDivElement | null>;
 }
 
 const StickyNav = ({ heroRef }: StickyNavProps) => {
