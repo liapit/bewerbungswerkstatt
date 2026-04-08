@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Check, ShieldCheck } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";

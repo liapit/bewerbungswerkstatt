@@ -1,0 +1,397 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* ═══════════════════════════════════════════════════════════
+       MAIN SITE COLOR THEME
+       All colors use HSL format: <hue> <saturation%> <lightness%>
+
+       To adjust the theme:
+       - Hue:        0=red, 30=orange, 60=yellow, 120=green, 195=cyan, 210=blue, 270=purple, 330=pink
+       - Saturation:  0%=gray ... 100%=vivid
+       - Lightness:   0%=black, 50%=pure color, 100%=white
+
+       The accent color is used for: CTA buttons, highlighted text,
+       decorative borders, step indicators, icons, and badges.
+       Keep lightness ≤50% for WCAG AA contrast on white backgrounds.
+       ═══════════════════════════════════════════════════════════ */
+
+    /* --- Base backgrounds & text --- */
+    --background: 0 0% 100%;
+    --foreground: 220 15% 15%;
+
+    /* --- Cards & popovers --- */
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 15%;
+
+    /* --- Primary: headings, footer bg, nav links --- */
+    --primary: 220 40% 20%;
+    --primary-foreground: 0 0% 98%;
+
+    /* --- Secondary & muted: alternating section backgrounds --- */
+    --secondary: 220 10% 94%;
+    --secondary-foreground: 220 15% 15%;
+    --muted: 220 10% 96%;
+    --muted-foreground: 220 10% 40%;
+
+    /* --- Accent: CTAs, highlights, badges, icons ---
+         ★ CHANGE THIS to re-theme the site ★
+         Current: blue (205°). Previous: orange (38 92% 50%)
+         Schulen page reference: cyan-blue (195 65% 65%)         --- */
+    --accent: 205 65% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    /* --- Destructive (errors) --- */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* --- Borders & inputs --- */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 220 40% 20%;
+    --radius: 0.5rem;
+
+    /* --- Dark hero sections (Hero & Contact) --- */
+    --hero-bg: 220 40% 12%;
+    --hero-fg: 0 0% 95%;
+
+    /* --- Dark content sections (Benefits) --- */
+    --section-dark: 220 25% 15%;
+    --section-dark-fg: 220 10% 85%;
+
+    /* --- Sidebar (unused on public site) --- */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  /* Preserve original school-friendly palette for /schulen */
+  .schulen-theme {
+    --background: 193 53% 93%;
+    --foreground: 210 10% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 195 100% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 195 100% 15%;
+    --primary: 205 65% 35%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 180 26% 76%;
+    --secondary-foreground: 195 100% 15%;
+    --muted: 193 53% 90%;
+    --muted-foreground: 205 10% 35%;
+    --accent: 195 65% 65%;
+    --accent-foreground: 195 100% 15%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 205 65% 35%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 30s linear infinite;
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
+}
+
+/* ── Hero CV stream ── */
+@keyframes cv-stream {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes cv-stream-reverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-cv-stream {
+  animation: cv-stream var(--cv-stream-speed, 45s) linear infinite;
+}
+
+.animate-cv-stream-reverse {
+  animation: cv-stream-reverse var(--cv-stream-speed-reverse, 50s) linear infinite;
+}
+
+
+.cv-stream-track {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    white 12%,
+    white 88%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    white 12%,
+    white 88%,
+    transparent 100%
+  );
+}
+
+.cv-stream-container::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 11;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    hsl(var(--hero-bg)) 0%,
+    transparent 25%,
+    transparent 75%,
+    hsl(var(--hero-bg)) 100%
+  );
+}
+
+/* ── Hero page-load entrance ── */
+@keyframes hero-enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-enter-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.hero-animate {
+  opacity: 0;
+  animation: hero-enter 0.7s ease-out forwards;
+}
+
+.hero-animate-scale {
+  opacity: 0;
+  animation: hero-enter-scale 0.7s ease-out forwards;
+}
+
+/* ── Arrow spring keyframe ── */
+@keyframes arrow-spring {
+  0%   { transform: scale(0.5);  opacity: 0; }
+  60%  { transform: scale(1.15); opacity: 1; }
+  80%  { transform: scale(0.93); opacity: 1; }
+  100% { transform: scale(1.0);  opacity: 1; }
+}
+
+/* ── Transformation card: shimmer + hover base ── */
+.transform-card {
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease, translate 0.3s ease;
+}
+
+.transform-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    hsl(205 65% 75% / 0.06) 50%,
+    hsl(205 65% 75% / 0.10) 55%,
+    transparent 65%
+  );
+  transform: translateX(-120%);
+  transition: transform 0.65s ease;
+  pointer-events: none;
+  border-radius: inherit;
+  z-index: 1;
+}
+
+/* ── Transformation card internal stagger ── */
+.transform-card .card-bad,
+.transform-card .card-arrow,
+.transform-card .card-good {
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+/* bad: enters from left */
+.transform-card .card-bad {
+  transform: translateX(-20px);
+}
+
+/* arrow: spring animation handles entrance */
+.transform-card .card-arrow {
+  transform: scale(0.5);
+  transition: none;
+}
+
+/* good: enters from right on all screen sizes */
+.transform-card .card-good {
+  transform: translateX(20px);
+  transition-delay: 0.4s;
+}
+
+/* ── Revealed: children animate in ── */
+.transform-card.revealed .card-bad,
+.transform-card.revealed .card-good {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.transform-card.revealed .card-arrow {
+  animation: arrow-spring 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) 0.22s both;
+}
+
+/* ── Hover: card lift + accent glow ── */
+.transform-card.revealed:hover {
+  translate: 0 -3px;
+  box-shadow:
+    0 8px 32px -4px hsl(205 65% 45% / 0.25),
+    0 4px 16px -4px hsl(205 65% 45% / 0.15),
+    0 0 0 1px hsl(205 65% 45% / 0.12);
+}
+
+/* Hover: shimmer sweep */
+.transform-card.revealed:hover::before {
+  transform: translateX(120%);
+}
+
+/* Hover: bad side dims */
+.transform-card.revealed:hover .card-bad {
+  opacity: 0.68;
+  transition: opacity 0.25s ease;
+}
+
+/* Hover: good side green text glow */
+.transform-card .card-good p:first-child {
+  text-shadow: none;
+  transition: text-shadow 0.3s ease;
+}
+.transform-card.revealed:hover .card-good p:first-child {
+  text-shadow: 0 0 14px hsl(152 76% 60% / 0.45);
+}
+
+/* Hover: arrow spring-rotates (cancel animation, use transition) */
+.transform-card.revealed:hover .card-arrow {
+  animation: none;
+  opacity: 1;
+  transform: rotate(8deg) scale(1.2);
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0s;
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .hero-animate,
+  .hero-animate-scale {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+
+  .animate-cv-stream,
+  .animate-cv-stream-reverse {
+    animation: none !important;
+  }
+
+  .cv-stream-track {
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
+  }
+
+  .transform-card::before {
+    display: none !important;
+  }
+
+  .transform-card .card-bad,
+  .transform-card .card-arrow,
+  .transform-card .card-good {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .transform-card.revealed:hover {
+    translate: none !important;
+    box-shadow: none !important;
+  }
+}
