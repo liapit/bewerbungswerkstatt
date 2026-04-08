@@ -12,7 +12,7 @@ const Contact = () => {
           </h2>
           <p className="text-xl text-hero-foreground/70 mb-12 leading-relaxed">
             Kontaktieren Sie uns für ein unverbindliches Erstgespräch.
-            Wir beraten Sie persönlich — in Einsiedeln oder in der Deutschschweiz.
+            Wir beraten Sie persönlich in einem Onlinegespräch.
           </p>
         </ScrollReveal>
 
