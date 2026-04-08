@@ -251,39 +251,112 @@
   animation: hero-enter-scale 0.7s ease-out forwards;
 }
 
+/* ── Arrow spring keyframe ── */
+@keyframes arrow-spring {
+  0%   { transform: scale(0.5);  opacity: 0; }
+  60%  { transform: scale(1.15); opacity: 1; }
+  80%  { transform: scale(0.93); opacity: 1; }
+  100% { transform: scale(1.0);  opacity: 1; }
+}
+
+/* ── Transformation card: shimmer + hover base ── */
+.transform-card {
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease, translate 0.3s ease;
+}
+
+.transform-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    hsl(205 65% 75% / 0.06) 50%,
+    hsl(205 65% 75% / 0.10) 55%,
+    transparent 65%
+  );
+  transform: translateX(-120%);
+  transition: transform 0.65s ease;
+  pointer-events: none;
+  border-radius: inherit;
+  z-index: 1;
+}
+
 /* ── Transformation card internal stagger ── */
 .transform-card .card-bad,
 .transform-card .card-arrow,
 .transform-card .card-good {
+  position: relative;
+  z-index: 2;
   opacity: 0;
-  transition: opacity 0.45s ease-out, transform 0.45s ease-out;
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
+/* bad: enters from left */
 .transform-card .card-bad {
-  transform: translateY(8px);
+  transform: translateX(-20px);
 }
 
+/* arrow: spring animation handles entrance */
 .transform-card .card-arrow {
-  transform: scale(0.75);
-  transition-delay: 0.2s;
+  transform: scale(0.5);
+  transition: none;
 }
 
+/* good: enters from right on all screen sizes */
 .transform-card .card-good {
-  transform: translateY(8px);
+  transform: translateX(20px);
   transition-delay: 0.4s;
 }
 
-@media (min-width: 640px) {
-  .transform-card .card-good {
-    transform: translateX(12px);
-  }
-}
-
+/* ── Revealed: children animate in ── */
 .transform-card.revealed .card-bad,
-.transform-card.revealed .card-arrow,
 .transform-card.revealed .card-good {
   opacity: 1;
-  transform: translateY(0) translateX(0) scale(1);
+  transform: translateX(0);
+}
+
+.transform-card.revealed .card-arrow {
+  animation: arrow-spring 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) 0.22s both;
+}
+
+/* ── Hover: card lift + accent glow ── */
+.transform-card.revealed:hover {
+  translate: 0 -3px;
+  box-shadow:
+    0 8px 32px -4px hsl(205 65% 45% / 0.25),
+    0 4px 16px -4px hsl(205 65% 45% / 0.15),
+    0 0 0 1px hsl(205 65% 45% / 0.12);
+}
+
+/* Hover: shimmer sweep */
+.transform-card.revealed:hover::before {
+  transform: translateX(120%);
+}
+
+/* Hover: bad side dims */
+.transform-card.revealed:hover .card-bad {
+  opacity: 0.68;
+  transition: opacity 0.25s ease;
+}
+
+/* Hover: good side green text glow */
+.transform-card .card-good p:first-child {
+  text-shadow: none;
+  transition: text-shadow 0.3s ease;
+}
+.transform-card.revealed:hover .card-good p:first-child {
+  text-shadow: 0 0 14px hsl(152 76% 60% / 0.45);
+}
+
+/* Hover: arrow spring-rotates (cancel animation, use transition) */
+.transform-card.revealed:hover .card-arrow {
+  animation: none;
+  opacity: 1;
+  transform: rotate(8deg) scale(1.2);
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0s;
 }
 
 /* ── Reduced motion ── */
@@ -304,11 +377,21 @@
     mask-image: none !important;
   }
 
+  .transform-card::before {
+    display: none !important;
+  }
+
   .transform-card .card-bad,
   .transform-card .card-arrow,
   .transform-card .card-good {
+    animation: none !important;
     transition: none !important;
     opacity: 1 !important;
     transform: none !important;
+  }
+
+  .transform-card.revealed:hover {
+    translate: none !important;
+    box-shadow: none !important;
   }
 }

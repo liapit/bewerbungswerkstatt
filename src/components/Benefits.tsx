@@ -135,7 +135,7 @@ function TransformationCard({ item }: { item: typeof transformations[number] }) 
     <div
       ref={ref}
       className={`transform-card rounded-xl bg-white/5 p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-0 transition-[opacity,transform] duration-700 ease-out ${
-        isVisible ? "opacity-100 translate-y-0 revealed" : "opacity-0 translate-y-3 sm:translate-y-4"
+        isVisible ? "opacity-100 translate-y-0 scale-100 revealed" : "opacity-0 translate-y-4 scale-[0.97]"
       }`}
     >
       {/* Bad example */}
