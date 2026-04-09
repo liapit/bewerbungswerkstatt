@@ -7,9 +7,9 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 const plans = [
   {
     tag: "Einstieg",
-    title: "Erstgespräch",
+    title: "Analyse & Erstgespräch",
     price: "95",
-    duration: "Bis zu 45 Minuten",
+    duration: "Online Besprechung bis zu 45 Minuten",
     features: [
       "Analyse Ihrer aktuellen Unterlagen",
       "Identifikation der grössten Verbesserungspotenziale",

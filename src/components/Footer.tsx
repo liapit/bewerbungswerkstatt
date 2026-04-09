@@ -24,7 +24,7 @@ const Footer = () => {
               href="/schulen"
               className="text-primary-foreground/70 hover:text-white transition-colors"
             >
-              Für Schulen
+              Für Stellensuchende im IT-, Finanz-, Versicherungs- und Back Officebereich
             </a>
           </div>
         </div>

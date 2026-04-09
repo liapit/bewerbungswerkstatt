@@ -10,7 +10,7 @@ const navItems = [
   { label: "Lösung", id: "loesung" },
   { label: "Angebot", id: "angebot" },
   { label: "Preise", id: "preise" },
-  { label: "Expertin", id: "expertin" },
+  { label: "Experten", id: "experten" },
   { label: "Kontakt", id: "kontakt" },
 ];
 

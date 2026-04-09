@@ -12,17 +12,17 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 const services = [
   {
     icon: ClipboardCheck,
-    title: "1:1 CV-Review & Beratung",
+    title: "Einen CV, der beim ersten Eindruck überzeugt.",
     text: "Persönliche Analyse Ihres Lebenslaufs mit einem Experten. Wir identifizieren Schwachstellen und erarbeiten gemeinsam eine überzeugende Darstellung Ihrer Laufbahn.",
   },
   {
     icon: MessageSquare,
-    title: "Detailliertes Feedback",
-    text: "Konkrete, umsetzbare Verbesserungsvorschläge — nicht generische Tipps, sondern auf Ihre Branche und Position zugeschnittene Empfehlungen.",
+    title: "Ein Motivationsschreiben, das auf die Anforderungen der Stelle zugeschnitten ist.",
+    text: "Wir zeigen Ihnen, wie ein von der Masse herausstechendes Motivationsschreiben aussehen könnte.",
   },
   {
     icon: FilePenLine,
-    title: "Schreiben & Optimierung",
+    title: "Komplett neues Dossier erstellen",
     text: "Professionelle Überarbeitung oder Neuerstellung von Lebenslauf und Motivationsschreiben. Jedes Wort wird sorgfältig gewählt.",
   },
   {
@@ -57,7 +57,7 @@ const Offers = () => {
             Unsere Dienstleistungen
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Massgeschneiderte Unterstützung für Ihre Karriere in der Deutschschweiz.
+            Massgeschneiderte Unterstützung in Deutsch und Englisch.
           </p>
         </ScrollReveal>
 

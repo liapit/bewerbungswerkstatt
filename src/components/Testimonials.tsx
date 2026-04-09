@@ -1,33 +1,33 @@
 const testimonials = [
   {
-    name: "Lena M.",
+    name: "Basil N.",
     review:
-      "Dank der CV-Beratung habe ich innerhalb von zwei Wochen drei Einladungen zum Vorstellungsgespräch erhalten. Absolut empfehlenswert!",
+      "Ich bin absolut fasziniert von dem Motivationsschreiben von Audelia. Ich hatte sogar mein erstes Interview meiner jetzigen Stelle Dank ihr!",
   },
   {
-    name: "Marco S.",
+    name: "Melissa H.",
     review:
-      "Die Überarbeitung meines Lebenslaufs war Gold wert. Endlich werde ich von Recruitern kontaktiert.",
+      "Ich bin schon mehrere Jahre Kundin von Bewerbungswerkstatt und habe bereits einige Interviews ergattert dank ihren Bewerbungsdossiers. :) ",
   },
   {
-    name: "Sarah K.",
+    name: "Sarah M.",
     review:
-      "Professionell, schnell und auf den Punkt. Mein Motivationsschreiben hat sofort überzeugt.",
+      "xy",
   },
   {
-    name: "Thomas R.",
+    name: "Raphael P.",
     review:
-      "Als Quereinsteiger wusste ich nicht, wie ich mich präsentieren soll. Bewerbungswerkstatt hat das perfekt gelöst.",
+      "xy",
   },
   {
-    name: "Julia W.",
+    name: "Emilie H.",
     review:
-      "Sehr persönliche Beratung. Man merkt, dass hier echte Experten am Werk sind.",
+      "Ich habe die Beratung und die Dossier-Updates sehr geschätzt. Das Team kennt ihr Businessbereich sehr gut.",
   },
   {
-    name: "Fabian H.",
+    name: "Alessia A.",
     review:
-      "Nach Jahren ohne Bewerbung war ich unsicher. Das Team hat mir Sicherheit und einen top Lebenslauf gegeben.",
+      "xy",
   },
 ];
 
