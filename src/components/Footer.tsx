@@ -1,4 +1,9 @@
+"use client";
+
+import { useContactDialog } from "@/lib/contact-dialog-context";
+
 const Footer = () => {
+  const { openDialog } = useContactDialog();
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="container mx-auto px-6 py-10">
@@ -8,12 +13,12 @@ const Footer = () => {
             <p className="text-primary-foreground/60 text-sm">Einsiedeln</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 text-sm">
-            <a
-              href="mailto:audelia@bewerbungswerkstatt.ch"
+            <button
+              onClick={openDialog}
               className="text-primary-foreground/70 hover:text-white transition-colors"
             >
-              audelia@bewerbungswerkstatt.ch 
-            </a>
+              audelia@bewerbungswerkstatt.ch
+            </button>
             <a
               href="tel:+41766295056"
               className="text-primary-foreground/70 hover:text-white transition-colors"

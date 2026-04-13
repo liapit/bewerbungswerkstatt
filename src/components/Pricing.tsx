@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Check, ShieldCheck } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { useContactDialog } from "@/lib/contact-dialog-context";
 
 const plans = [
   {
@@ -38,6 +39,7 @@ const plans = [
 ];
 
 const Pricing = () => {
+  const { openDialog } = useContactDialog();
   return (
     <section id="preise" className="bg-muted py-20 lg:py-28">
       <div className="container mx-auto px-6">
@@ -97,9 +99,9 @@ const Pricing = () => {
                   }`}
                   variant={plan.highlighted ? "default" : "outline"}
                   size="lg"
-                  asChild
+                  onClick={openDialog}
                 >
-                  <a href="mailto:audelia@bewerbungswerkstatt.ch">{plan.cta}</a>
+                  {plan.cta}
                 </Button>
                 {plan.guarantee && (
                   <p className="mt-3 flex items-center justify-center gap-1.5 text-sm text-muted-foreground">

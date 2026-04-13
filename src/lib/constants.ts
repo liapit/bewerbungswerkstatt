@@ -1,3 +1,12 @@
+// ── Email Settings ──
+
+export const EMAIL_FROM = "Bewerbungswerkstatt <hello@contact.bewerbungswerkstatt.ch>";
+
+export const NOTIFICATION_ADDRESSES = [
+  "audelia@bewerbungswerkstatt.ch",
+  "daniel@bewerbungswerkstatt.ch",
+];
+
 // ── Hero CV Stream Settings ──
 
 /** Base animation duration in seconds for the forward row */

@@ -3,8 +3,10 @@
 import { Button } from "@/components/ui/button";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { useContactDialog } from "@/lib/contact-dialog-context";
 
 const Contact = () => {
+  const { openDialog } = useContactDialog();
   return (
     <section id="kontakt" className="bg-hero text-hero-foreground py-20 lg:py-28">
       <div className="container mx-auto px-6 text-center max-w-3xl">
@@ -19,7 +21,7 @@ const Contact = () => {
 
         <div className="grid md:grid-cols-3 gap-8 mb-12">
           {[
-            { icon: Mail, label: "E-Mail", value: "audelia@bewerbungswerkstatt.ch", href: "mailto:audelia@bewerbungswerkstatt.ch" },
+            { icon: Mail, label: "E-Mail", value: "audelia@bewerbungswerkstatt.ch", href: null },
             { icon: Phone, label: "Telefon", value: "076 629 50 56", href: "tel:+41766295056" },
             { icon: MapPin, label: "Standort", value: "Einsiedeln / Deutschschweiz", href: null },
           ].map((item, i) => (
@@ -28,7 +30,14 @@ const Contact = () => {
                 <item.icon className="w-6 h-6 text-accent" />
                 <div>
                   <p className="text-sm text-hero-foreground/50 mb-1">{item.label}</p>
-                  {item.href ? (
+                  {item.label === "E-Mail" ? (
+                    <button
+                      onClick={openDialog}
+                      className="text-white hover:text-accent transition-colors"
+                    >
+                      {item.value}
+                    </button>
+                  ) : item.href ? (
                     <a
                       href={item.href}
                       className="text-white hover:text-accent transition-colors"
