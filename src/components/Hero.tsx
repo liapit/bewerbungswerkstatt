@@ -111,7 +111,7 @@ const CvStream = ({ cards, reverse }: { cards: CardData[]; reverse?: boolean }) 
     >
       <div
         ref={stripRef}
-        className={`flex ${reverse ? "animate-cv-stream-reverse" : "animate-cv-stream"} py-2`}
+        className={`flex w-max ${reverse ? "animate-cv-stream-reverse" : "animate-cv-stream"} py-2`}
       >
         {/* First set */}
         {cards.map((card, i) => (

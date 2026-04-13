@@ -7,4 +7,4 @@ export const CV_STREAM_SPEED = 45;
 export const CV_STREAM_SPEED_REVERSE = 50;
 
 /** Playback rate multiplier when hovering a conveyor row */
-export const CV_STREAM_HOVER_SPEED = 3;
+export const CV_STREAM_HOVER_SPEED = 1;
