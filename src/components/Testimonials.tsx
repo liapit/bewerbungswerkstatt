@@ -12,12 +12,12 @@ const testimonials = [
   {
     name: "Sarah M.",
     review:
-      "xy",
+      "Ich bin absolut zufrieden mit den Ratschlägen und natürlich mit meinen neuen Bewerbungsunterlagen, mit denen ich sofort erste Intervies ergattert habe.",
   },
   {
     name: "Raphael P.",
     review:
-      "xy",
+      "Das Team hat mir geholfen meine Bewerbungsunterlagen professionell zu erstellen und ich wurde zu mehreren ersten Interviews eingeladen!",
   },
   {
     name: "Emilie H.",
@@ -27,7 +27,7 @@ const testimonials = [
   {
     name: "Alessia A.",
     review:
-      "xy",
+      "Ich bin sehr dankbar für das Upgrade meines Lebenslaufes und Motivationsschreiben.",
   },
 ];
 
