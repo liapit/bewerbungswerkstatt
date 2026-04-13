@@ -12,7 +12,7 @@ const Footer = () => {
               href="mailto:audelia@bewerbungswerkstatt.ch"
               className="text-primary-foreground/70 hover:text-white transition-colors"
             >
-              audelia@bewerbungswerkstatt.ch
+              audelia@bewerbungswerkstatt.ch 
             </a>
             <a
               href="tel:+41766295056"
@@ -24,7 +24,7 @@ const Footer = () => {
               href="/schulen"
               className="text-primary-foreground/70 hover:text-white transition-colors"
             >
-              Für Stellensuchende im IT-, Finanz-, Versicherungs- und Back Officebereich
+              Für Stellensuchende im IT-, Finanz-, Versicherungsbereich und Back-Office
             </a>
           </div>
         </div>
